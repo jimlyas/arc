@@ -1,0 +1,104 @@
+site_name: ARC
+site_url: https://jimlyas.github.io/arc
+site_author: jimlyas
+site_description: ARC is collection of helpful implementation for Android application Development
+repo_url: https://github.com/jimlyas/arc
+repo_name: View on Github!
+copyright: |
+  Copyright &copy; 2022 <a href="https://github.com/jimlyas"  target="_blank" rel="noopener">Jimly A.</a>
+
+docs_dir: docs/src
+theme:
+  name: material
+  custom_dir: docs/theme
+  languange: en
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    scheme: dracula
+    primary: red
+    accent: blue
+  font:
+    text: Roboto
+    code: Jetbrains Mono
+  features:
+    - content.code.annotate
+    - navigation.tracking
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
+    - announce.dismiss
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - search.share
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+  - tags
+  - macros
+  - minify:
+      minify_html: true
+      minify_js: true
+  - glightbox:
+      touchNavigation: false
+      loop: false
+      effect: zoom
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: false
+
+# Navigation
+nav:
+  - Home: index.md
+
+markdown_extensions:
+  - abbr
+  - pymdownx.highlight
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - footnotes
+  - def_list
+  - pymdownx.snippets
+  - pymdownx.inlinehilite
+  - pymdownx.mark
+  - pymdownx.keys
+  - pymdownx.smartsymbols
+  - attr_list
+  - admonition
+  - meta
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - toc:
+      toc_depth: 2
+      title: On this page
+      permalink: true
+      permalink_title: Anchor link to this section for reference
+      slugify: !!python/name:pymdownx.slugs.uslugify
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/figma
+      link: https://www.figma.com/@jimlyas
+    - icon: fontawesome/brands/medium
+      link: https://jimlyas.medium.com
+    - icon: fontawesome/brands/github
+      link: https://github.com/jimlyas
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/jimlyas

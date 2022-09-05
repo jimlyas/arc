@@ -1,0 +1,49 @@
+name: Bug Report
+description: Report a bug
+body:
+  - type: checkboxes
+    attributes:
+      label: Contribution guidelines
+      description: Please read the contribution guidelines before proceeding.
+      options:
+        - label: I've read the [contribution guidelines](https://github.com/jimlyas/okdynamic/blob/master/CONTRIBUTING.md) and wholeheartedly agree
+          required: true
+  - type: textarea
+    attributes:
+      label: Description
+      description: Please provide a brief description of the bug in 1-2 sentences.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expected behaviour
+      description: Please describe precisely what you'd expect to happen.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Actual behaviour
+      description: Please describe precisely what is actually happening.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      description: Please describe the steps to reproduce the bug.
+      placeholder: |-
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Version
+      description: Please provide the version you are using.
+      value: |-
+        Android SDK Version 0.1.0
+        Android Gradle Plugin Version 0.1.0
+        Kotlin Version 0.1.0
+        ARC Version 0.1.0
+    validations:
+      required: true
