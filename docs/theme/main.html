@@ -24,19 +24,11 @@
 <meta content="<url>" name="twitter:image"/>
 <link href="/manifest.json" rel="manifest">
 <link href="/assets/512.png" rel="apple-touch-icon">
-<script>
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("/sw.js")
-        .then(res => console.log("service worker registered"))
-        .catch(err => console.log("service worker not registered", err))
-      }
-
-</script>
+<!--<script>-->
+<!--      if ("serviceWorker" in navigator) {-->
+<!--        navigator.serviceWorker.register("/sw.js")-->
+<!--        .then(res => console.log("service worker registered"))-->
+<!--        .catch(err => console.log("service worker not registered", err))-->
+<!--      }-->
+<!--</script>-->
 {% endblock %}
-<!--{% block announce %}-->
-<!--<span class="twemoji">-->
-<!--{% set icon = "material/alert-decagram" %}-->
-<!--{% include ".icons/" ~ icon ~ ".svg" %}-->
-<!--</span>-->
-<!--2.0.0 has been released! Check out <a href="https://gitlab.playcourt.id/mobileteam/android/-/releases/2.0.0">Release Notes</a> and <a href="/docs/migration/2.0.0">Migration Guide</a> for more information.-->
-<!--{% endblock %}-->
