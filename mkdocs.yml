@@ -55,8 +55,15 @@ plugins:
 
 # Navigation
 nav:
-  - Home: index.md
-  - Configuration: configuration.md
+  - Getting Started:
+      - Home: index.md
+      - Configuration: getting-started/configuration.md
+  - Data:
+      - Introduction: data/introduction.md
+  - Presentation:
+      - Introduction: presentation/introduction.md
+  - Utilities:
+      - Introduction: utilities/introduction.md
 
 markdown_extensions:
   - abbr
