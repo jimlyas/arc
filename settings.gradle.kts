@@ -1,5 +1,5 @@
 rootProject.name = "arc"
-include(":sample", ":modules")
+include(":sample", ":modules", ":modules:data", ":modules:presentation", ":modules:utilities")
 enableFeaturePreview("VERSION_CATALOGS")
 
 pluginManagement {
