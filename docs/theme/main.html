@@ -4,26 +4,6 @@
 {{ super() }}
 {% endblock %}
 {% block extrahead %}
-{% set title = config.site_name %}
-{% if page and page.meta and page.meta.title %}
-{% set title = title ~ " - " ~ page.meta.title %}
-{% elif page and page.title and not page.is_homepage %}
-{% set title = title ~ " - " ~ page.title %}
-{% endif %}
-<meta content="website" property="og:type"/>
-<meta content="{{ title }}" property="og:title"/>
-<meta content="{{ config.site_description }}" property="og:description"/>
-<meta content="{{ page.canonical_url }}" property="og:url"/>
-<meta content="<url>" property="og:image"/>
-<meta content="image/png" property="og:image:type"/>
-<meta content="1200" property="og:image:width"/>
-<meta content="630" property="og:image:height"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="{{ title }}" name="twitter:title"/>
-<meta content="{{ config.site_description }}" name="twitter:description"/>
-<meta content="<url>" name="twitter:image"/>
-<link href="/manifest.json" rel="manifest">
-<link href="/assets/512.png" rel="apple-touch-icon">
 <!--<script>-->
 <!--      if ("serviceWorker" in navigator) {-->
 <!--        navigator.serviceWorker.register("/sw.js")-->

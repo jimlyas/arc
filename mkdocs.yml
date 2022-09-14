@@ -39,6 +39,7 @@ extra_css:
 
 plugins:
   - search
+  - social
   - tags
   - macros
   - minify:
@@ -55,8 +56,7 @@ plugins:
 
 # Navigation
 nav:
-  - Getting Started:
-      - Home: index.md
+  - Getting Started: index.md
       - Configuration: getting-started/configuration.md
   - Data:
       - Introduction: data/introduction.md
