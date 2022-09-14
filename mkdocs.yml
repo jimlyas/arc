@@ -56,7 +56,8 @@ plugins:
 
 # Navigation
 nav:
-  - Getting Started: index.md
+  - Getting Started:
+      - index.md
       - Configuration: getting-started/configuration.md
   - Data:
       - Introduction: data/introduction.md
