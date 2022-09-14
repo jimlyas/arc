@@ -1,4 +1,5 @@
 /.gradle/
+/.cache/
 *.iml
 .gradle
 /local.properties
