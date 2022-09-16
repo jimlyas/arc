@@ -18,6 +18,6 @@ material = { module = "com.google.android.material:material", version.ref = "mat
 
 [plugins]
 app = { id = "com.android.application", version.ref = "android" }
-lib = { id = "com.android.library", version.ref = "android" }
-kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "kotlin" }
+kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+lib = { id = "com.android.library", version.ref = "android" }
