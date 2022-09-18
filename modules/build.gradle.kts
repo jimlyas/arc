@@ -18,6 +18,7 @@ tasks.withType(org.jetbrains.dokka.gradle.DokkaMultiModuleTask::class.java).conf
     )
 }
 
+@Suppress("OldTargetApi")
 subprojects {
     apply(plugin = "com.android.library")
     apply(plugin = "kotlin-android")
@@ -27,7 +28,7 @@ subprojects {
     group = "com.jimlyas.arc"
 
     configure<com.android.build.gradle.LibraryExtension> {
-        namespace = "jimlyas.arc.$name"
+        namespace = "arc.$name"
         compileSdk = 31
         defaultConfig {
             minSdk = 21

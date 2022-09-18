@@ -7,6 +7,7 @@ core-ktx = "1.8.0"
 junit = "4.13.2"
 kotlin = "1.7.0"
 material = "1.2.0"
+navigation = "2.5.0"
 
 [libraries]
 android-espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "android-espresso" }
@@ -15,6 +16,14 @@ compat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 junit = { module = "junit:junit", version.ref = "junit" }
 ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
+navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
+navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
+
+[bundles]
+navigation = [
+    "navigation-fragment",
+    "navigation-ui",
+]
 
 [plugins]
 app = { id = "com.android.application", version.ref = "android" }

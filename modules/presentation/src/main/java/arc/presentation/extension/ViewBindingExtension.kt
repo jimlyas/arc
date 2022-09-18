@@ -1,10 +1,10 @@
-package jimlyas.arc.presentation.extension
+package arc.presentation.extension
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
-import jimlyas.arc.presentation.activity.ArcActivity
-import jimlyas.arc.presentation.fragment.ArcFragment
+import arc.presentation.activity.ArcActivity
+import arc.presentation.fragment.ArcFragment
 import java.lang.reflect.ParameterizedType
 
 /**
@@ -72,13 +72,9 @@ internal fun Class<*>.checkInflateMethod() = try {
  * @return instance of [ViewBinding] that have been inflated
  * @receiver [Class]
  */
+@Suppress("UNCHECKED_CAST")
 internal fun <V : ViewBinding> Class<*>.inflateViewBinding(layoutInflater: LayoutInflater) =
-    try {
-        @Suppress("UNCHECKED_CAST")
-        getMethod("inflate", LayoutInflater::class.java).invoke(null, layoutInflater) as V
-    } catch (t: Throwable) {
-        throw t
-    }
+    getMethod("inflate", LayoutInflater::class.java).invoke(null, layoutInflater) as V
 
 /**
  * Method to run inflate method from given [ViewBinding] using java reflection

@@ -1,4 +1,4 @@
-package jimlyas.arc.presentation
+package arc.utilities
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

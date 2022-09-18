@@ -9,7 +9,7 @@ Improving Android developer experience... one line at the time.
 
 MIT License
 
-Copyright (c) 2022 Jimly Asshiddiqy
+Copyright © 2022 Jimly Asshiddiqy
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
 associated documentation files (the "Software"), to deal in the Software without restriction,

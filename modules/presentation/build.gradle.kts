@@ -5,6 +5,8 @@ dependencies {
     implementation(libs.compat)
     implementation(libs.material)
 
+    api(libs.bundles.navigation)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.android.junit)
     androidTestImplementation(libs.android.espresso)

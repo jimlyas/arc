@@ -1,4 +1,4 @@
-package jimlyas.arc.utilities
+package arc.presentation
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -17,6 +17,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("jimlyas.arc.utilities.test", appContext.packageName)
+        assertEquals("jimlyas.arc.presentation.test", appContext.packageName)
     }
 }
