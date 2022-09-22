@@ -55,6 +55,11 @@ android {
 }
 
 dependencies {
+    // ARC modules
+    implementation(projects.modules.data)
+    implementation(projects.modules.presentation)
+    implementation(projects.modules.utilities)
+
     implementation(libs.ktx)
     implementation(libs.compat)
     implementation(libs.material)

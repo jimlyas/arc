@@ -1,4 +1,4 @@
-package arc.presentation.navigation
+package arc.presentation.delegation.navigation
 
 import android.net.Uri
 import android.os.Bundle
