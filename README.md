@@ -1,12 +1,16 @@
-# ARC
+<p align="center">
+  <a href="https://jimlyas.github.io/arc/">
+    <img src="https://raw.githubusercontent.com/jimlyas/arc/main/docs/src/assets/arc_logo.png" width="300" alt="ARC">
+  </a>
+</p>
 
-**COMING SOON**
-
-Improving Android developer experience... one line at the time.
-
+<p align="center">
+  <strong>The only Android library, your project probably ever need</strong>
+</p>
 
 ## License
 
+```
 MIT License
 
 Copyright © 2022 Jimly Asshiddiqy
@@ -27,3 +31,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 IN THE SOFTWARE.
+```
