@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://jimlyas.github.io/arc/">
-    <img src="https://raw.githubusercontent.com/jimlyas/arc/main/docs/src/assets/arc_logo.png" width="300" alt="ARC">
+    <img src="https://raw.githubusercontent.com/jimlyas/arc/main/docs/src/assets/arc_logo.png" width="250" alt="ARC">
   </a>
 </p>
 

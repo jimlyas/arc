@@ -10,6 +10,8 @@ copyright: |
 docs_dir: docs/src
 theme:
   name: material
+  logo: assets/arc_logo.png
+  favicon: assets/arc_logo.png
   custom_dir: docs/theme
   languange: en
   icon:
