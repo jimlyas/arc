@@ -7,7 +7,10 @@ dependencies {
 
     api(libs.bundles.navigation)
 
+    api(libs.paging.runtime)
+
+    api(libs.bundles.camerax)
+
     testImplementation(libs.junit)
-    androidTestImplementation(libs.android.junit)
-    androidTestImplementation(libs.android.espresso)
+    androidTestImplementation(libs.bundles.android.test)
 }
