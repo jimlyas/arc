@@ -29,7 +29,7 @@ interface NavigationDelegate {
     fun navigateTo(@IdRes navId: Int, args: Bundle? = null, options: NavOptions? = null)
 
     /**
-     * Method to navigate to another [androidx.fragment.app.Fragment] using Deep Link with Jetpack [androidx.navigation.Navigation]
+     * Method to navigate to another [androidx.fragment.app.Fragment] using Deep Link [Uri] with Jetpack [androidx.navigation.Navigation]
      * @param link the deeplink [Uri] for opening [androidx.fragment.app.Fragment]
      * @param options used to store special options for navigation actions for example animation and single top, by default null
      */

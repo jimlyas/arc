@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
@@ -72,6 +73,24 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
             }
         }
         return result
+    }
+
+
+    /**
+     * Method to prevent screenshot and screen recording any page from within the application
+     */
+    protected fun secureScreen() {
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_SECURE,
+            WindowManager.LayoutParams.FLAG_SECURE
+        )
+    }
+
+    /**
+     * Method to clear screenshot and screen recording prevention
+     */
+    protected fun clearSecureScreen() {
+        window.clearFlags(WindowManager.LayoutParams.FLAG_SECURE)
     }
 
     /**
