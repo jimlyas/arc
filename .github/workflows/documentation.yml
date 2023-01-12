@@ -15,5 +15,5 @@ jobs:
         with:
           key: ${{ github.ref }}
           path: .cache
-      - run: pip install mkdocs-material mkdocs-macros-plugin mkdocs-minify-plugin mkdocs-glightbox
+      - run: pip install mkdocs-material mkdocs-macros-plugin mkdocs-minify-plugin mkdocs-glightbox pillow cairosvg
       - run: mkdocs gh-deploy --force
