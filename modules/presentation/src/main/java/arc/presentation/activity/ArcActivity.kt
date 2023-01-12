@@ -6,10 +6,13 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.WindowManager
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.viewbinding.ViewBinding
@@ -23,6 +26,8 @@ import arc.presentation.extension.inflateViewBinding
  * @param viewBinding [ViewBinding] class to be implemented for this class
  * @param hostId Resource Id of [androidx.fragment.app.FragmentContainerView] inside the [Activity]
  * @property binding instance of [viewBinding] that have been inflated. Use [binding] for referencing your [android.view.View]
+ * @property menuId the Id of the menu that are attached to the [Toolbar], null by default
+ * @property menuListener the listener for the item menu, null by default
  * @property navController instance of [androidx.navigation.NavController] that has been embedded to the [androidx.fragment.app.FragmentContainerView]
  * @property permissionCallBack stored [Pair] of positive and negative action when permission is granted or not. Initially null, and can changed later on
  * @property permissionRequestContract [ActivityResultContracts] for requesting permission from the user
@@ -33,6 +38,9 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
 
     protected val binding by lazy { inflateViewBinding() }
 
+    private var menuId: Int? = null
+    private var menuListener: ((Int) -> Boolean)? = null
+
     val navController: NavController? by lazy {
         (hostId?.let {
             supportFragmentManager.findFragmentById(
@@ -41,7 +49,7 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
         } as NavHostFragment).navController
     }
 
-    private val permissionCallBack: Pair<(() -> Unit)?, (() -> Unit)?>? = null
+    private var permissionCallBack: Pair<(() -> Unit)?, (() -> Unit)?>? = null
 
     private val permissionRequestContract =
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
@@ -82,6 +90,26 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
         return result
     }
 
+    /**
+     * Method to request permission to user
+     * @param permissions list of permissions to request
+     * @param onPermissionGranted action to do when permission granted
+     * @param onPermissionNotGranted action to do when permission not granted
+     */
+    @TargetApi(Build.VERSION_CODES.M)
+    fun requestPermissionsSafely(
+        permissions: Array<String>,
+        onPermissionGranted: (() -> Unit)? = null,
+        onPermissionNotGranted: (() -> Unit)? = null
+    ) {
+        val notGrantedPermission = arrayListOf<String>().apply {
+            permissions.forEach {
+                if (!checkPermission(it)) this.add(it)
+            }
+        }
+        permissionCallBack = Pair(onPermissionGranted, onPermissionNotGranted)
+        permissionRequestContract.launch(notGrantedPermission.toTypedArray())
+    }
 
     /**
      * Function to prevent screenshot and screen recording any page from within the application
@@ -98,6 +126,41 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
      */
     protected fun clearSecureScreen() {
         window.clearFlags(WindowManager.LayoutParams.FLAG_SECURE)
+    }
+
+    fun setupToolbar(
+        toolbar: Toolbar?,
+        title: String?,
+        isChild: Boolean,
+        menu: Int?,
+        onMenuListener: ((Int) -> Boolean)?
+    ) {
+        menuId = menu
+        menuListener = onMenuListener
+        toolbar?.let {
+            setSupportActionBar(it)
+            supportActionBar?.let { tb ->
+                title?.let { title -> tb.title = title }
+                tb.setDisplayHomeAsUpEnabled(isChild)
+                invalidateOptionsMenu()
+            }
+        } ?: run {
+            supportActionBar?.let {
+                it.title = title
+                it.setDisplayHomeAsUpEnabled(isChild)
+                invalidateOptionsMenu()
+            }
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuId?.let { menuInflater.inflate(it, menu) }
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        menuListener?.invoke(item.itemId)
+        return super.onOptionsItemSelected(item)
     }
 
     /**
