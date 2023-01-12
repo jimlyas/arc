@@ -1,7 +1,6 @@
 rootProject.name = "arc"
 include(":sample", ":modules", ":modules:data", ":modules:presentation", ":modules:utilities")
-enableFeaturePreview("VERSION_CATALOGS")
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+listOf("VERSION_CATALOGS", "TYPESAFE_PROJECT_ACCESSORS").forEach { enableFeaturePreview(it) }
 
 pluginManagement {
     repositories {
@@ -13,7 +12,7 @@ pluginManagement {
 
 dependencyResolutionManagement {
     repositories {
-        maven { setUrl("https://jitpack.io") }
+        maven("https://jitpack.io")
         mavenCentral()
         google()
     }

@@ -10,6 +10,7 @@ import android.view.WindowManager
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.viewbinding.ViewBinding
 import arc.presentation.delegation.navigation.NavigationDelegate
@@ -32,7 +33,13 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
 
     protected val binding by lazy { inflateViewBinding() }
 
-    protected val navController by lazy { (hostId?.let { supportFragmentManager.findFragmentById(it) } as NavHostFragment).navController }
+    val navController: NavController? by lazy {
+        (hostId?.let {
+            supportFragmentManager.findFragmentById(
+                it
+            )
+        } as NavHostFragment).navController
+    }
 
     private val permissionCallBack: Pair<(() -> Unit)?, (() -> Unit)?>? = null
 
@@ -46,11 +53,11 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        setNavController(navController)
+        navController?.let(::setNavController)
     }
 
     /**
-     * Method to check if application has permission
+     * Function to check if application has permission
      * @param permission name of the permission to check
      * @return Does the application has the requested permission?
      */
@@ -59,7 +66,7 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
         Build.VERSION.SDK_INT < Build.VERSION_CODES.M || checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED
 
     /**
-     * Method to check if the application has permissions
+     * Function to check if the application has permissions
      * @param permissions array of the permission to check
      * @return Does the application has the requested permissions?
      */
@@ -77,7 +84,7 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
 
 
     /**
-     * Method to prevent screenshot and screen recording any page from within the application
+     * Function to prevent screenshot and screen recording any page from within the application
      */
     protected fun secureScreen() {
         window.setFlags(
@@ -87,14 +94,14 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
     }
 
     /**
-     * Method to clear screenshot and screen recording prevention
+     * Function to clear screenshot and screen recording prevention
      */
     protected fun clearSecureScreen() {
         window.clearFlags(WindowManager.LayoutParams.FLAG_SECURE)
     }
 
     /**
-     * Method start another [ArcActivity] within the application
+     * Function start another [ArcActivity] within the application
      * @param activity the [ArcActivity] to be started
      * @param isFinished After opening another [Activity], finish the previous [Activity]?
      * @param flags list of Flags used for opening new [Activity], for example [Intent.FLAG_ACTIVITY_NEW_TASK] or [Intent.FLAG_ACTIVITY_CLEAR_TOP]

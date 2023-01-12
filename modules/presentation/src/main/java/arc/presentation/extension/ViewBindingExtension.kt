@@ -15,7 +15,7 @@ import java.lang.reflect.ParameterizedType
  */
 
 /**
- * Method to inflate a [ViewBinding] from [ArcActivity]
+ * Function to inflate a [ViewBinding] from [ArcActivity]
  *
  * @param viewBinding type of [ViewBinding] to inflate
  * @return instance of [viewBinding] that have been inflated
@@ -25,7 +25,7 @@ internal fun <viewBinding : ViewBinding> ArcActivity<viewBinding>.inflateViewBin
     findViewBindingClass().inflateViewBinding<viewBinding>(layoutInflater)
 
 /**
- * Method to inflate a [ViewBinding] from [ArcFragment]
+ * Function to inflate a [ViewBinding] from [ArcFragment]
  *
  * @param viewBinding type of [ViewBinding] to inflate
  * @return instance of [viewBinding] that have been inflated
@@ -35,7 +35,7 @@ internal fun <viewBinding : ViewBinding> ArcFragment<viewBinding>.inflateViewBin
     findViewBindingClass().inflateViewBinding<viewBinding>(layoutInflater)
 
 /**
- * Method to check does the given class is a [ViewBinding] or not
+ * Function to check does the given class is a [ViewBinding] or not
  *
  * @return desired [Class] to found, in this case is the [ViewBinding]
  * @receiver [Any]
@@ -54,7 +54,7 @@ internal fun Any.findViewBindingClass(): Class<*> {
 }
 
 /**
- * Method to check does the [Class] have inflate method (that all [ViewBinding] have)
+ * Function to check does the [Class] have inflate method (that all [ViewBinding] have)
  * @return [Boolean] Does the [Class] have inflate method or not?
  * @receiver [Class]
  */
@@ -65,9 +65,8 @@ internal fun Class<*>.checkInflateMethod() = try {
     false
 }
 
-
 /**
- * Method to run inflate method from any [Class] to get the [ViewBinding] instance
+ * Function to run inflate method from any [Class] to get the [ViewBinding] instance
  *
  * @return instance of [ViewBinding] that have been inflated
  * @receiver [Class]
@@ -77,7 +76,7 @@ internal fun <V : ViewBinding> Class<*>.inflateViewBinding(layoutInflater: Layou
     getMethod("inflate", LayoutInflater::class.java).invoke(null, layoutInflater) as V
 
 /**
- * Method to run inflate method from given [ViewBinding] using java reflection
+ * Function to run inflate method from given [ViewBinding] using java reflection
  *
  * @return instance of [ViewBinding] that have been inflated
  * @receiver [ViewGroup]
@@ -89,7 +88,7 @@ inline fun <reified V : ViewBinding> ViewGroup.inflateViewBinding() =
 
 
 /**
- * Method to run inflate method from given [ViewBinding] using java reflection
+ * Function to run inflate method from given [ViewBinding] using java reflection
  *
  * @return instance of [ViewBinding] that have been inflated
  * @receiver [LayoutInflater]

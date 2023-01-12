@@ -3,7 +3,6 @@ package arc.presentation.fragment
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -33,16 +32,12 @@ abstract class ArcFragment<viewBinding : ViewBinding> : Fragment(),
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ) = binding.root
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setNavController(findNavController())
-    }
-
     override fun onAttach(context: Context) {
         super.onAttach(context)
         currentActivity = when (context) {
             is ArcActivity<*> -> context
             else -> (parentFragment as ArcFragment<*>).currentActivity
         }
+        currentActivity.navController?.let { this.setNavController(findNavController()) }
     }
 }

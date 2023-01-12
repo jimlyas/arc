@@ -30,12 +30,14 @@ subprojects {
     configure<com.android.build.gradle.LibraryExtension> {
         namespace = "arc.$name"
         compileSdk = 31
+
         defaultConfig {
             minSdk = 21
             targetSdk = 31
             testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
             consumerProguardFiles("consumer-rules.pro")
         }
+
         buildTypes {
             debug {
                 isMinifyEnabled = false

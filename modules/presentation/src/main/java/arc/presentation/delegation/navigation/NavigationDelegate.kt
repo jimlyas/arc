@@ -15,13 +15,13 @@ import androidx.navigation.NavOptions
 interface NavigationDelegate {
 
     /**
-     * Method to set a [NavController] to the component
+     * Function to set a [NavController] to the component
      * @param controller the [NavController] to be set
      */
     fun setNavController(controller: NavController)
 
     /**
-     * Method to navigate to another [androidx.fragment.app.Fragment] using Jetpack [androidx.navigation.Navigation]
+     * Function to navigate to another [androidx.fragment.app.Fragment] using Jetpack [androidx.navigation.Navigation]
      * @param navId resource Id for action that link to navigate the [androidx.fragment.app.Fragment]
      * @param args arguments or any data to pass that will be used in destination [androidx.fragment.app.Fragment], by default null
      * @param options used to store special options for navigation actions for example animation and single top, by default null
@@ -29,7 +29,7 @@ interface NavigationDelegate {
     fun navigateTo(@IdRes navId: Int, args: Bundle? = null, options: NavOptions? = null)
 
     /**
-     * Method to navigate to another [androidx.fragment.app.Fragment] using Deep Link [Uri] with Jetpack [androidx.navigation.Navigation]
+     * Function to navigate to another [androidx.fragment.app.Fragment] using Deep Link [Uri] with Jetpack [androidx.navigation.Navigation]
      * @param link the deeplink [Uri] for opening [androidx.fragment.app.Fragment]
      * @param options used to store special options for navigation actions for example animation and single top, by default null
      */
