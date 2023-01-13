@@ -4,6 +4,7 @@ import android.annotation.TargetApi
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.Menu
@@ -31,6 +32,8 @@ import arc.presentation.extension.inflateViewBinding
  * @property navController instance of [androidx.navigation.NavController] that has been embedded to the [androidx.fragment.app.FragmentContainerView]
  * @property permissionCallBack stored [Pair] of positive and negative action when permission is granted or not. Initially null, and can changed later on
  * @property permissionRequestContract [ActivityResultContracts] for requesting permission from the user
+ * @property selectedImageListener listener to invoke when user pick an image
+ * @property pickImageContract [ActivityResultContracts] for picking image from user
  * Copyright © 2022-2023 jimlyas. All rights reserved.
  */
 abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null) :
@@ -48,18 +51,34 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
     }
 
     private var permissionCallBack: Pair<(() -> Unit)?, (() -> Unit)?>? = null
-
     private val permissionRequestContract =
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
             var granted = true
             it.forEach { entry -> if (!entry.value) granted = false }
-            if (granted) permissionCallBack?.first?.invoke() else permissionCallBack?.second?.invoke()
+            permissionCallBack?.let { callBack ->
+                if (granted) callBack.first?.invoke() else callBack.second?.invoke()
+            }
+        }
+
+    private var selectedImageListener: ((Uri) -> Unit)? = null
+    private var pickImageContract =
+        registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
+            uri?.let { selectedImageListener?.invoke(it) }
         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         navController?.let(::setNavController)
+    }
+
+    /**
+     * Function to pick image from gallery
+     * @param action action to do when an image is selected
+     */
+    fun pickImageFromGallery(action: (Uri) -> Unit) {
+        selectedImageListener = action
+        pickImageContract.launch("image/*")
     }
 
     /**

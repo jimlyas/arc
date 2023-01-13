@@ -3,6 +3,7 @@ package arc.presentation.fragment
 import android.annotation.TargetApi
 import android.content.Context
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -43,6 +44,14 @@ abstract class ArcFragment<viewBinding : ViewBinding> : Fragment(),
             else -> (parentFragment as ArcFragment<*>).currentActivity
         }
         currentActivity.navController?.let { this.setNavController(findNavController()) }
+    }
+
+    /**
+     * Function to pick image from gallery
+     * @param action action to do when an image is selected
+     */
+    fun pickImageFromGallery(action: (Uri) -> Unit) {
+        currentActivity.pickImageFromGallery(action)
     }
 
     /**
