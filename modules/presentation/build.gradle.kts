@@ -11,6 +11,8 @@ dependencies {
 
     api(libs.bundles.camerax)
 
+    api("com.github.bumptech.glide:glide:4.13.2")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.bundles.android.test)
 }

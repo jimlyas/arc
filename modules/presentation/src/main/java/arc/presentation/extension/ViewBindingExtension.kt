@@ -54,8 +54,8 @@ internal fun Any.findViewBindingClass(): Class<*> {
 }
 
 /**
- * Function to check does the [Class] have inflate method (that all [ViewBinding] have)
- * @return [Boolean] Does the [Class] have inflate method or not?
+ * Function to check does the [Class] have inflate function (that all [ViewBinding] have)
+ * @return [Boolean] Does the [Class] have inflate function or not?
  * @receiver [Class]
  */
 internal fun Class<*>.checkInflateMethod() = try {
@@ -66,7 +66,7 @@ internal fun Class<*>.checkInflateMethod() = try {
 }
 
 /**
- * Function to run inflate method from any [Class] to get the [ViewBinding] instance
+ * Function to run inflate function from any [Class] to get the [ViewBinding] instance
  *
  * @return instance of [ViewBinding] that have been inflated
  * @receiver [Class]
@@ -76,7 +76,7 @@ internal fun <V : ViewBinding> Class<*>.inflateViewBinding(layoutInflater: Layou
     getMethod("inflate", LayoutInflater::class.java).invoke(null, layoutInflater) as V
 
 /**
- * Function to run inflate method from given [ViewBinding] using java reflection
+ * Function to run inflate function from given [ViewBinding] using java reflection
  *
  * @return instance of [ViewBinding] that have been inflated
  * @receiver [ViewGroup]
@@ -88,7 +88,7 @@ inline fun <reified V : ViewBinding> ViewGroup.inflateViewBinding() =
 
 
 /**
- * Function to run inflate method from given [ViewBinding] using java reflection
+ * Function to run inflate function from given [ViewBinding] using java reflection
  *
  * @return instance of [ViewBinding] that have been inflated
  * @receiver [LayoutInflater]

@@ -46,7 +46,7 @@ abstract class ArcFragment<viewBinding : ViewBinding> : Fragment(),
     }
 
     /**
-     * Method to request permission to user
+     * Function to request permission to user
      * @param permissions list of permissions to request
      * @param onPermissionGranted action to do when permission granted
      * @param onPermissionNotGranted action to do when permission not granted
@@ -65,7 +65,7 @@ abstract class ArcFragment<viewBinding : ViewBinding> : Fragment(),
     }
 
     /**
-     * Method to check if application has permission
+     * Function to check if application has permission
      * @param permission name of the permission to check
      * @return is the application has the permission?
      */
@@ -75,21 +75,12 @@ abstract class ArcFragment<viewBinding : ViewBinding> : Fragment(),
                 currentActivity.checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED
 
     /**
-     * Method to check if the application has permissions
+     * Function to check if the application has permissions
      * @param permissions array of the permission to check
      * @return is the application has the permissions?
      */
     @TargetApi(Build.VERSION_CODES.M)
-    fun checkPermissions(permissions: Array<String>): Boolean {
-        var result = true
-        permissions.forEach {
-            if (!checkPermission(it)) {
-                result = false
-                return@forEach
-            }
-        }
-        return result
-    }
+    fun checkPermissions(permissions: List<String>) = currentActivity.checkPermissions(permissions)
 
     /**
      * Function to finish the [ArcActivity] that current [ArcFragment] is attached to
@@ -99,7 +90,7 @@ abstract class ArcFragment<viewBinding : ViewBinding> : Fragment(),
     }
 
     /**
-     * Method to set [ArcActivity]'s [Toolbar] from [ArcFragment]
+     * Function to set [ArcActivity]'s [Toolbar] from [ArcFragment]
      * @param toolbar [Toolbar] that defined in XML layout, nullable
      * @param title Title for [Toolbar], nullable
      * @param isChild Display back button it toolbar?

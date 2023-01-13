@@ -43,9 +43,7 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
 
     val navController: NavController? by lazy {
         (hostId?.let {
-            supportFragmentManager.findFragmentById(
-                it
-            )
+            supportFragmentManager.findFragmentById(it)
         } as NavHostFragment).navController
     }
 
@@ -71,7 +69,8 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
      */
     @TargetApi(Build.VERSION_CODES.M)
     fun checkPermission(permission: String) =
-        Build.VERSION.SDK_INT < Build.VERSION_CODES.M || checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED
+        Build.VERSION.SDK_INT < Build.VERSION_CODES.M ||
+                checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED
 
     /**
      * Function to check if the application has permissions
@@ -79,7 +78,7 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
      * @return Does the application has the requested permissions?
      */
     @TargetApi(Build.VERSION_CODES.M)
-    fun checkPermissions(permissions: Array<String>): Boolean {
+    fun checkPermissions(permissions: List<String>): Boolean {
         var result = true
         permissions.forEach {
             if (!checkPermission(it)) {
@@ -91,7 +90,7 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
     }
 
     /**
-     * Method to request permission to user
+     * Function to request permission to user
      * @param permissions list of permissions to request
      * @param onPermissionGranted action to do when permission granted
      * @param onPermissionNotGranted action to do when permission not granted
@@ -129,7 +128,7 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
     }
 
     /**
-     * Method to set [ArcActivity]'s [Toolbar]
+     * Function to set [ArcActivity]'s [Toolbar]
      * @param toolbar [Toolbar] that defined in XML layout, nullable
      * @param title Title for [Toolbar], nullable
      * @param isChild Display back button it toolbar?
