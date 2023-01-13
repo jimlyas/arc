@@ -14,6 +14,7 @@ import kotlin.math.min
 
 
 /**
+ * [CameraXSetup] define [CameraX] configuration and support manipulate its' functionality like adding and removing [UseCase]
  * @author jimlyas
  * @since 03 Oct 2022
  * @param lifeCycle the [LifecycleOwner] where the [androidx.camera.view.PreviewView] is being inflated
@@ -23,7 +24,7 @@ import kotlin.math.min
  * @property RATIO_4_3 used to defined when the current device ratio is 4 / 3
  * @property cameraProvider standard [ProcessCameraProvider] that binds all the [UseCase] to the [Camera]
  * @property cameraSelector defined which lens to use for the camera in the given [UseCase]
- * @property camera an [ArrayList] of [UseCase] that been added to the [Camera]
+ *
  * Copyright © 2022-2023 jimlyas. All rights reserved.
  */
 class CameraXSetup(

@@ -12,6 +12,8 @@ import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
 
 /**
+ * [ImageViewLoadConfiguration] define setup and configuration to load an image into [ImageView] using [Glide]
+ *
  * @author jimlyas
  * @since 13 Jan 2023
  * @param source the image source that will be loaded into [ImageView], supported type is [Int], [String], and [Drawable]
@@ -150,6 +152,7 @@ typealias loadConfiguration = ImageViewLoadConfiguration.() -> Unit
 /**
  * Function to load image into [ImageView]
  * @param configuration [loadConfiguration] define the [Glide] configuration need to load the image
+ * @receiver [ImageView]
  */
 fun ImageView.loadImage(configuration: loadConfiguration) {
     val config = ImageViewLoadConfiguration().apply(configuration)

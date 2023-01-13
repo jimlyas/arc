@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
 import arc.presentation.activity.ArcActivity
+import arc.presentation.bottomsheet.ArcBottomSheet
 import arc.presentation.fragment.ArcFragment
 import java.lang.reflect.ParameterizedType
 
@@ -13,6 +14,16 @@ import java.lang.reflect.ParameterizedType
  *
  * Copyright © 2022-2023 jimlyas. All rights reserved.
  */
+
+/**
+ * Function to inflate a [ViewBinding] from [ArcBottomSheet]
+ *
+ * @param viewBinding type of [ViewBinding] to inflate
+ * @return instance of [viewBinding] that have been inflated
+ * @receiver [ArcBottomSheet]
+ */
+internal fun <viewBinding : ViewBinding> ArcBottomSheet<viewBinding>.inflateViewBinding() =
+    findViewBindingClass().inflateViewBinding<viewBinding>(layoutInflater)
 
 /**
  * Function to inflate a [ViewBinding] from [ArcActivity]

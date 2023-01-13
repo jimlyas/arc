@@ -7,6 +7,8 @@ dependencies {
     implementation(libs.runtime)
     implementation(libs.compat)
 
+    api("androidx.browser:browser:1.4.0")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.bundles.android.test)
 }

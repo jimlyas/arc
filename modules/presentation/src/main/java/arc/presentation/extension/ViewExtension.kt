@@ -14,6 +14,7 @@ import android.widget.EditText
 
 /**
  * Function to display [View]
+ * @receiver [View]
  */
 fun View.visible() {
     visibility = View.VISIBLE
@@ -21,6 +22,7 @@ fun View.visible() {
 
 /**
  * Function to hide [View]
+ * @receiver [View]
  */
 fun View.invisible() {
     visibility = View.INVISIBLE
@@ -28,6 +30,7 @@ fun View.invisible() {
 
 /**
  * Function to remove [View]
+ * @receiver [View]
  */
 fun View.gone() {
     visibility = View.GONE
@@ -35,6 +38,7 @@ fun View.gone() {
 
 /**
  * Function to enable [View]
+ * @receiver [View]
  */
 fun View.enable() {
     isEnabled = true
@@ -50,6 +54,7 @@ fun View.disable() {
 /**
  * Function to define listener when text changed on [EditText]
  * @param doWhenChange action to do when the text changed
+ * @receiver [EditText]
  */
 fun EditText.onTextChanged(doWhenChange: (text: String) -> Unit) {
     this.addTextChangedListener(object : TextWatcher {

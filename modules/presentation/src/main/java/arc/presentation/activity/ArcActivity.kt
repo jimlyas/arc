@@ -22,6 +22,8 @@ import arc.presentation.delegation.navigation.NavigationDelegation
 import arc.presentation.extension.inflateViewBinding
 
 /**
+ * [ArcActivity] define base class for [Activity] for project
+ *
  * @author jimlyas
  * @since 16 Sep 2022
  * @param viewBinding [ViewBinding] class to be implemented for this class

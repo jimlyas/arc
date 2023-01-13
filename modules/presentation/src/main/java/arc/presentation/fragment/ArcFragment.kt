@@ -18,6 +18,7 @@ import arc.presentation.delegation.navigation.NavigationDelegation
 import arc.presentation.extension.inflateViewBinding
 
 /**
+ * [ArcFragment] Base class for implementing [Fragment] to project
  * @author jimlyas
  * @since 16 Sep 2022
  * @param viewBinding [ViewBinding] class to be implemented for this class
