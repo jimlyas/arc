@@ -10,7 +10,7 @@ import androidx.navigation.NavOptions
  * @author jimlyas
  * @since 18 Sep 2022
  * @property nav [NavController] that will being used to navigate through the Fragments
- * Copyright © 2022 jimlyas. All rights reserved.
+ * Copyright © 2022-2023 jimlyas. All rights reserved.
  */
 class NavigationDelegation : NavigationDelegate {
 

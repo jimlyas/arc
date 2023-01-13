@@ -31,7 +31,7 @@ import arc.presentation.extension.inflateViewBinding
  * @property navController instance of [androidx.navigation.NavController] that has been embedded to the [androidx.fragment.app.FragmentContainerView]
  * @property permissionCallBack stored [Pair] of positive and negative action when permission is granted or not. Initially null, and can changed later on
  * @property permissionRequestContract [ActivityResultContracts] for requesting permission from the user
- * Copyright © 2022 jimlyas. All rights reserved.
+ * Copyright © 2022-2023 jimlyas. All rights reserved.
  */
 abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null) :
     AppCompatActivity(), NavigationDelegate by NavigationDelegation() {
@@ -128,6 +128,14 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
         window.clearFlags(WindowManager.LayoutParams.FLAG_SECURE)
     }
 
+    /**
+     * Method to set [ArcActivity]'s [Toolbar]
+     * @param toolbar [Toolbar] that defined in XML layout, nullable
+     * @param title Title for [Toolbar], nullable
+     * @param isChild Display back button it toolbar?
+     * @param menu menu Id, nullable if not needed
+     * @param onMenuListener listener when item of the menu selected, nullable if not needed
+     */
     fun setupToolbar(
         toolbar: Toolbar?,
         title: String?,

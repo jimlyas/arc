@@ -5,6 +5,9 @@
 </p>
 
 <p align="center">
+  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/jimlyas/arc">
+  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/jimlyas/arc">
+  <img alt="GitHub Workflow Status (with branch)" src="https://img.shields.io/github/actions/workflow/status/jimlyas/arc/documentation.yml"><br/>
   <strong>The only Android library, your project probably ever need</strong>
 </p>
 

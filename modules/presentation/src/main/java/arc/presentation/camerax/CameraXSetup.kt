@@ -24,7 +24,7 @@ import kotlin.math.min
  * @property cameraProvider standard [ProcessCameraProvider] that binds all the [UseCase] to the [Camera]
  * @property cameraSelector defined which lens to use for the camera in the given [UseCase]
  * @property camera an [ArrayList] of [UseCase] that been added to the [Camera]
- * Copyright © 2022 jimlyas. All rights reserved.
+ * Copyright © 2022-2023 jimlyas. All rights reserved.
  */
 class CameraXSetup(
     private val view: PreviewView,
@@ -40,22 +40,19 @@ class CameraXSetup(
     private val cameraProvider = ProcessCameraProvider.getInstance(view.context)
         .apply { addListener({}, ContextCompat.getMainExecutor(view.context)) }.get()
     private val cameraSelector = CameraSelector.Builder().requireLensFacing(lensFacing).build()
-    private val camera = arrayListOf<Camera>()
 
     init {
-        camera.add(
-            cameraProvider.bindToLifecycle(lifeCycle, cameraSelector,
-                Preview.Builder()
-                    .setTargetAspectRatio(
-                        aspectRatio(
-                            view.context.resources.displayMetrics.widthPixels,
-                            view.context.resources.displayMetrics.heightPixels
-                        )
+        val camera = cameraProvider.bindToLifecycle(lifeCycle, cameraSelector,
+            Preview.Builder()
+                .setTargetAspectRatio(
+                    aspectRatio(
+                        view.context.resources.displayMetrics.widthPixels,
+                        view.context.resources.displayMetrics.heightPixels
                     )
-                    .setTargetRotation(view.display.rotation)
-                    .build()
-                    .also { it.setSurfaceProvider(view.surfaceProvider) }
-            )
+                )
+                .setTargetRotation(view.display.rotation)
+                .build()
+                .also { it.setSurfaceProvider(view.surfaceProvider) }
         )
 
         view.setOnTouchListener { _, motionEvent ->
@@ -68,7 +65,7 @@ class CameraXSetup(
                         view.height.toFloat()
                     )
                     val autoFocusPoint = factory.createPoint(motionEvent.x, motionEvent.y)
-                    camera[0].cameraControl.startFocusAndMetering(
+                    camera.cameraControl.startFocusAndMetering(
                         FocusMeteringAction.Builder(
                             autoFocusPoint,
                             FocusMeteringAction.FLAG_AF
@@ -82,11 +79,19 @@ class CameraXSetup(
     }
 
     /**
-     * Function to add another use case to the list of [Camera]
+     * Function to add another [UseCase] to the list of [Camera]
      * @param useCase a new [UseCase] to add to the [Camera]
      */
     fun addUseCase(useCase: UseCase) {
-        camera.add(cameraProvider.bindToLifecycle(lifeCycle, cameraSelector, useCase))
+        cameraProvider.bindToLifecycle(lifeCycle, cameraSelector, useCase)
+    }
+
+    /**
+     * Function to remove [UseCase] to the list of [Camera]
+     * @param useCase a new [UseCase] to add to the [Camera]
+     */
+    fun removeUseCase(useCase: UseCase) {
+        cameraProvider.unbind(useCase)
     }
 
     /**

@@ -11,7 +11,7 @@ import java.lang.reflect.ParameterizedType
  * @author jimlyas
  * @since 16 Sep 2022
  *
- * Copyright © 2022 jimlyas. All rights reserved.
+ * Copyright © 2022-2023 jimlyas. All rights reserved.
  */
 
 /**

@@ -23,7 +23,7 @@ import arc.presentation.extension.inflateViewBinding
  * @property binding instance of [viewBinding] that have been inflated. Use [binding] for referencing your [android.view.View]
  * @property currentActivity instance of [ArcActivity] where the [ArcFragment] is attached to. If the [ArcFragment] is child Fragment, then [currentActivity] will be the [ArcActivity] of the [getParentFragment]
  *
- * Copyright © 2022 jimlyas. All rights reserved.
+ * Copyright © 2022-2023 jimlyas. All rights reserved.
  */
 abstract class ArcFragment<viewBinding : ViewBinding> : Fragment(),
     NavigationDelegate by NavigationDelegation() {
