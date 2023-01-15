@@ -3,6 +3,7 @@ package arc.presentation.extension
 import android.graphics.drawable.Drawable
 import android.widget.ImageView
 import android.widget.ProgressBar
+import arc.presentation.exception.NoSupportedTypeThrowable
 import arc.presentation.extension.ImageViewLoadConfiguration.ImageTransformation
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
@@ -71,7 +72,7 @@ class ImageViewLoadConfiguration(
             is Drawable -> this.source = source
             is Int -> this.source = source
             is String -> this.source = source
-            else -> throw Throwable("data type not supported for image source")
+            else -> throw NoSupportedTypeThrowable("data type not supported for image source")
         }
     }
 
@@ -84,7 +85,7 @@ class ImageViewLoadConfiguration(
         when (placeHolder) {
             is Drawable -> options.placeholder(placeHolder)
             is Int -> options.placeholder(placeHolder)
-            else -> throw Throwable("only Drawable and resource Id is supported for place holder")
+            else -> throw NoSupportedTypeThrowable("only Drawable and resource Id is supported for place holder")
         }
     }
 
@@ -97,7 +98,7 @@ class ImageViewLoadConfiguration(
         when (errorImage) {
             is Drawable -> options.error(errorImage)
             is Int -> options.error(errorImage)
-            else -> throw Throwable("only Drawable and resource Id is supported for error image")
+            else -> throw NoSupportedTypeThrowable("only Drawable and resource Id is supported for error image")
         }
     }
 

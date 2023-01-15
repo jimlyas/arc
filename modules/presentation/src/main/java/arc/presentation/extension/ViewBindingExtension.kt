@@ -72,7 +72,7 @@ internal fun Any.findViewBindingClass(): Class<*> {
 internal fun Class<*>.checkInflateMethod() = try {
     getMethod("inflate", LayoutInflater::class.java)
     true
-} catch (ex: Exception) {
+} catch (ex: NoSuchMethodException) {
     false
 }
 
