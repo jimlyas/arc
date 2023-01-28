@@ -23,6 +23,8 @@ subprojects {
     apply(plugin = "kotlin-android")
     apply(plugin = "org.jetbrains.dokka")
 
+    val baseRepositoryURL = "https://github.com/jimlyas/arc/blob/main/modules/${project.name}"
+
     group = "io.github.jimlyas"
     version = "0.1.0"
 
@@ -89,7 +91,7 @@ subprojects {
                 includes.setFrom(files("$projectDir/packages.md"))
                 sourceLink {
                     localDirectory.set(file("src/main/java"))
-                    remoteUrl.set(uri("https://github.com/jimlyas/arc/blob/main/modules/${project.name}/src/main/java").toURL())
+                    remoteUrl.set(uri("${baseRepositoryURL}/src/main/java").toURL())
                     remoteLineSuffix.set("#L")
                 }
                 pluginsMapConfiguration.set(

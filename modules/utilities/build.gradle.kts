@@ -8,6 +8,8 @@ dependencies {
     implementation(libs.compat)
 
     api("androidx.browser:browser:1.4.0")
+    api("id.zelory:compressor:3.0.1")
+    api("com.jakewharton.timber:timber:5.0.1")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.bundles.android.test)

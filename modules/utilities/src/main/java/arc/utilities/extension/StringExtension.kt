@@ -1,5 +1,9 @@
 package arc.utilities.extension
 
+import android.util.Base64.NO_WRAP
+import android.util.Base64.encodeToString
+import android.webkit.MimeTypeMap
+import java.io.File
 import java.text.NumberFormat
 import java.util.*
 
@@ -26,4 +30,27 @@ object StringExtension {
         return if (useDot) formatter.format(this).replace(",", ".")
         else formatter.format(this)
     }
+
+    /**
+     * Function to get the MimeType of the given path
+     * @return [String] of file extension from given path
+     * @receiver [String]
+     */
+    fun String.getMimeType(): String? {
+        return MimeTypeMap.getSingleton()
+            .getMimeTypeFromExtension(
+                MimeTypeMap.getFileExtensionFromUrl(
+                    this.substring(this.lastIndexOf("."))
+                )
+            )
+    }
+
+    /**
+     * Function to convert [String] of file path into [Base64] [String]
+     * @return [String] of base [Base64] from given file
+     * @receiver [String]
+     */
+    fun String.imageToBase64() =
+        "data:" + this.getMimeType() + ";base64," +
+                encodeToString(File(this).readBytes(), NO_WRAP)
 }
