@@ -63,6 +63,7 @@ dependencies {
     implementation(libs.ktx)
     implementation(libs.compat)
     implementation(libs.material)
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.bundles.android.test)

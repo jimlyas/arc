@@ -1,6 +1,5 @@
 plugins {
     id("java-platform")
-    id("maven-publish")
     id("org.jetbrains.dokka")
 }
 
@@ -19,48 +18,10 @@ tasks.withType(org.jetbrains.dokka.gradle.DokkaMultiModuleTask::class.java).conf
     )
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            register<MavenPublication>("arc") {
-                group = this@afterEvaluate.group
-                version = this@afterEvaluate.version.toString()
-                artifactId = "arc"
-                from(components["javaPlatform"])
-
-                pom {
-                    name.set("arc")
-                    description.set("A concise description of my library")
-                    url.set("https://jimlyas.github.io/arc/")
-                    licenses {
-                        license {
-                            name.set("MIT License")
-                            url.set("https://opensource.org/licenses/MIT")
-                        }
-                    }
-                    developers {
-                        developer {
-                            id.set("jimlyas")
-                            name.set("Jimly Asshiddiqy")
-                            email.set("gmail@jimlyas.com")
-                        }
-                    }
-                    scm {
-                        connection.set("scm:git:git://github.com/jimlyas/arc.git")
-                        developerConnection.set("scm:git:ssh://github.com/jimlyas/arc.git")
-                        url.set("http://github.com/jimlyas/arc")
-                    }
-                }
-            }
-        }
-    }
-}
-
 subprojects {
     apply(plugin = "com.android.library")
     apply(plugin = "kotlin-android")
     apply(plugin = "org.jetbrains.dokka")
-    apply(plugin = "maven-publish")
 
     group = "io.github.jimlyas"
     version = "0.1.0"
@@ -108,43 +69,6 @@ subprojects {
         lint {
             abortOnError = false
             disable += "Instantiatable"
-        }
-    }
-
-    afterEvaluate {
-        publishing {
-            publications {
-                val moduleName = name[0].toUpperCase() + name.substring(1)
-                register<MavenPublication>("arc-$name") {
-                    group = this@afterEvaluate.group
-                    version = this@afterEvaluate.version.toString()
-                    artifactId = "arc-${this@afterEvaluate.name}"
-
-                    pom {
-                        name.set("arc-$name")
-                        description.set("$moduleName module of Arc library")
-                        url.set("https://jimlyas.github.io/arc/")
-                        licenses {
-                            license {
-                                name.set("MIT License")
-                                url.set("https://opensource.org/licenses/MIT")
-                            }
-                        }
-                        developers {
-                            developer {
-                                id.set("jimlyas")
-                                name.set("Jimly Asshiddiqy")
-                                email.set("gmail@jimlyas.com")
-                            }
-                        }
-                        scm {
-                            connection.set("scm:git:git://github.com/jimlyas/arc.git")
-                            developerConnection.set("scm:git:ssh://github.com/jimlyas/arc.git")
-                            url.set("http://github.com/jimlyas/arc")
-                        }
-                    }
-                }
-            }
         }
     }
 
