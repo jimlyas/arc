@@ -8,6 +8,7 @@ import id.zelory.compressor.constraint.size
 import java.io.File
 
 /**
+ * [FileUtilities] File manipulation and configuration utilities
  * @author jimlyas
  * @since 28 Jan 2023
  *

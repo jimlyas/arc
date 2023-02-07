@@ -19,7 +19,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.viewbinding.ViewBinding
 import arc.presentation.delegation.navigation.NavigationDelegate
 import arc.presentation.delegation.navigation.NavigationDelegation
-import arc.presentation.extension.inflateViewBinding
+import arc.presentation.extension.ViewBindingExtension.inflateViewBinding
 
 /**
  * [ArcActivity] define base class for [Activity] for project
@@ -108,6 +108,23 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
             }
         }
         return result
+    }
+
+    /**
+     * Function to check permission to the user
+     * @param permissions [List] of [String] permission to ask the user
+     * @param onPermissionGranted action to run when all the permissions is granted
+     * @param onPermissionNotGranted action to run when all or one of the permissions is not granted
+     */
+    fun checkPermissions(
+        permissions: List<String>,
+        onPermissionGranted: (() -> Unit),
+        onPermissionNotGranted: (() -> Unit)
+    ) {
+        val result = checkPermissions(permissions)
+
+        if (result) onPermissionGranted.invoke()
+        else onPermissionNotGranted.invoke()
     }
 
     /**

@@ -2,11 +2,9 @@ package arc.presentation.bottomsheet
 
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
-import arc.presentation.extension.inflateViewBinding
-import com.google.android.material.R
+import arc.presentation.extension.ViewBindingExtension.inflateViewBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 /**
@@ -33,9 +31,4 @@ abstract class ArcBottomSheet<viewBinding : ViewBinding>(isDialogCancelable: Boo
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ) = binding.root
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setStyle(STYLE_NORMAL, R.style.Theme_MaterialComponents_BottomSheetDialog)
-    }
 }

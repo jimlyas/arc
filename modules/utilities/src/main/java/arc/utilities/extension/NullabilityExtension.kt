@@ -1,6 +1,7 @@
 package arc.utilities.extension
 
 /**
+ * [NullabilityExtension] contains extension function to check null value of an Instance
  * @author jimlyas
  * @since 16 Jan 2023
  *

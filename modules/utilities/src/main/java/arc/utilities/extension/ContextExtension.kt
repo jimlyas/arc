@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.pm.ApplicationInfo
 import android.media.RingtoneManager
 import android.net.Uri
+import android.os.Build
 import android.widget.Toast
 import androidx.annotation.DrawableRes
 import androidx.browser.customtabs.CustomTabsIntent
@@ -13,10 +14,19 @@ import androidx.browser.customtabs.CustomTabsIntent.COLOR_SCHEME_SYSTEM
 import androidx.browser.customtabs.CustomTabsIntent.SHARE_STATE_OFF
 import androidx.core.app.NotificationCompat
 import arc.utilities.R
+import arc.utilities.security.AMAZON_APP_STORE
+import arc.utilities.security.DeviceChecker
+import arc.utilities.security.DeviceChecker.EMULATOR
+import arc.utilities.security.DeviceChecker.ROOTED
+import arc.utilities.security.DeviceChecker.SAFE
+import arc.utilities.security.DeviceChecker.isDeviceEmulator
+import arc.utilities.security.DeviceChecker.isDeviceRooted
+import arc.utilities.security.GOOGLE_PLAY_STORE
+import arc.utilities.security.HUAWEI_APP_GALLERY
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 /**
- *
+ * [ContextExtension] Extension function related to [Context]
  * @author jimlyas
  * @since 13 Jan 2023
  *
@@ -118,5 +128,39 @@ object ContextExtension {
                 setStyle(NotificationCompat.BigTextStyle().bigText(message))
             }.build()
         )
+    }
+
+    /**
+     * Function to check app that install current application
+     * @return [Boolean] Does the application installed from verified source? e.g Google Play Store,
+     * Amazon App Store, Huawei App Gallery
+     * @receiver [Context]
+     */
+    @Suppress("DEPRECATION")
+    fun Context.verifyInstaller(): Boolean {
+        val packageNameInstaller = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
+            packageManager.getInstallSourceInfo(packageName).installingPackageName
+        else
+            packageManager.getInstallerPackageName(packageName)
+
+        return when {
+            packageNameInstaller == null -> true
+            packageNameInstaller.startsWith(GOOGLE_PLAY_STORE) -> true
+            packageNameInstaller.startsWith(AMAZON_APP_STORE) -> true
+            packageNameInstaller.startsWith(HUAWEI_APP_GALLERY) -> true
+            else -> false
+        }
+    }
+
+    /**
+     * Function to determine does current device is tampered or not
+     * @return [DeviceChecker.SecurityCheck] that indicate current device status
+     * @receiver [Context]
+     */
+    @DeviceChecker.SecurityCheck
+    fun Context.securityCheck(): Int = when {
+        isDeviceEmulator(this) -> EMULATOR
+        isDeviceRooted(this) -> ROOTED
+        else -> SAFE
     }
 }

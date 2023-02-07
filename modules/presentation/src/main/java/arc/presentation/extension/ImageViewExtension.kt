@@ -5,6 +5,7 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import arc.presentation.exception.NoSupportedTypeThrowable
 import arc.presentation.extension.ImageViewLoadConfiguration.ImageTransformation
+import arc.presentation.extension.ViewExtension.gone
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException

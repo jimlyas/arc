@@ -15,7 +15,7 @@ import androidx.viewbinding.ViewBinding
 import arc.presentation.activity.ArcActivity
 import arc.presentation.delegation.navigation.NavigationDelegate
 import arc.presentation.delegation.navigation.NavigationDelegation
-import arc.presentation.extension.inflateViewBinding
+import arc.presentation.extension.ViewBindingExtension.inflateViewBinding
 
 /**
  * [ArcFragment] Base class for implementing [Fragment] to project
@@ -91,6 +91,22 @@ abstract class ArcFragment<viewBinding : ViewBinding> : Fragment(),
      */
     @TargetApi(Build.VERSION_CODES.M)
     fun checkPermissions(permissions: List<String>) = currentActivity.checkPermissions(permissions)
+
+    /**
+     * Function to check permission to the user
+     * @param permissions [List] of [String] permission to ask the user
+     * @param onPermissionGranted action to run when all the permissions is granted
+     * @param onPermissionNotGranted action to run when all or one of the permissions is not granted
+     */
+    fun checkPermissions(
+        permissions: List<String>,
+        onPermissionGranted: (() -> Unit),
+        onPermissionNotGranted: (() -> Unit)
+    ) {
+        currentActivity.checkPermissions(
+            permissions, onPermissionGranted, onPermissionNotGranted
+        )
+    }
 
     /**
      * Function to finish the [ArcActivity] that current [ArcFragment] is attached to

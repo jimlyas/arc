@@ -12,7 +12,8 @@ tasks.withType(org.jetbrains.dokka.gradle.DokkaMultiModuleTask::class.java).conf
     pluginsMapConfiguration.set(
         mapOf(
             "org.jetbrains.dokka.base.DokkaBase" to """{ 
-                    "footerMessage": "© Jimly A." 
+                    "footerMessage": "Copyright © 2022-2023 jimlyas. All rights reserved.",
+                     "customAssets" : ["${file("logo-icon.svg")}"]
                  }"""
         )
     )
@@ -97,7 +98,8 @@ subprojects {
                 pluginsMapConfiguration.set(
                     mapOf(
                         "org.jetbrains.dokka.base.DokkaBase" to """{ 
-                    "footerMessage": "© Jimly A." 
+                    "footerMessage": "Copyright © 2022-2023 jimlyas. All rights reserved.",
+                     "customAssets" : ["${file("${rootProject.path}/logo-icon.svg")}"]
                  }"""
                     )
                 )
