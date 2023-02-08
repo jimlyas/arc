@@ -5,7 +5,7 @@ site_description: ARC is collection of helpful implementation for Android applic
 repo_url: https://github.com/jimlyas/arc
 repo_name: View on Github!
 copyright: |
-  Copyright &copy; 2022 <a href="https://github.com/jimlyas"  target="_blank" rel="noopener">Jimly A.</a>
+  Copyright &copy; 2022-2023 <a href="https://github.com/jimlyas"  target="_blank" rel="noopener">Jimly A.</a>
 
 docs_dir: docs/src
 theme:
@@ -67,6 +67,7 @@ nav:
       - Introduction: presentation/introduction.md
   - Utilities:
       - Introduction: utilities/introduction.md
+  - Reference: reference/index.html
 
 markdown_extensions:
   - abbr
