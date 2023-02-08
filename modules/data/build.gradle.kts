@@ -5,6 +5,8 @@ dependencies {
     implementation(libs.compat)
 
     api(libs.bundles.room)
+    api("net.zetetic:android-database-sqlcipher:4.5.3")
+    api("androidx.sqlite:sqlite:2.3.0")
 
     api(libs.paging.runtime)
 
