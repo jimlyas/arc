@@ -60,14 +60,13 @@ plugins:
 nav:
   - Getting Started:
       - index.md
-      - Configuration: getting-started/configuration.md
-  - Data:
-      - Introduction: data/introduction.md
-  - Presentation:
-      - Introduction: presentation/introduction.md
-  - Utilities:
-      - Introduction: utilities/introduction.md
-  - Reference: reference/index.html
+      - Dependencies: getting-started/dependencies.md
+      - Installation: getting-started/installation.md
+  - Reference:
+      - Data: data/introduction.md
+      - Presentation: presentation/introduction.md
+      - Utilities: utilities/introduction.md
+  - API Docs: api/index.html
 
 markdown_extensions:
   - abbr

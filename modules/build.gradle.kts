@@ -8,7 +8,7 @@ version = "0.1.0"
 
 tasks.withType(org.jetbrains.dokka.gradle.DokkaMultiModuleTask::class.java).configureEach {
     moduleName.set("ARC")
-    outputDirectory.set(file("$rootDir/docs/src/reference"))
+    outputDirectory.set(file("$rootDir/docs/src/api"))
     pluginsMapConfiguration.set(
         mapOf(
             "org.jetbrains.dokka.base.DokkaBase" to """{ 

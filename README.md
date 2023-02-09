@@ -13,6 +13,33 @@
   <strong>The only Android library, your project probably ever need</strong>
 </p>
 
+## Motivations
+
+I started this project as a hobby, beside improving my skill as a developer but to see how can I
+improve my experience in developing Android application.
+
+We already know every time we start a new project, we usually take some time to setup the project
+with something like:
+
+- Adding necessary dependencies to the project, where we usually already know what dependencies to
+  use based on the requirements of current project and our experience from past project, so
+  basically a simple copy paste will do the trick
+- Before any feature implementation, building the base class for things like `Activity`,
+  `Fragment`, and perhaps `RecyclerView` adapter. All of those things and implement any
+  functionalities that we think might be useful later so we don't have to write it over and over
+  again.
+- Share your initial increments to other developers, perhaps you do things differently one way and
+  use different libraries so you communication at the start of project become very important
+
+Basically what I want to achieve is to reduce all of those repetitive tasks when starting new
+project so I can start just building the feature as soon as possible.
+
+I know that you can already do that using boilerplate where you run a command in terminal and by
+inputting some parameters, you can get ready to use project with all dependencies and setup provided
+for you. But that's just one way ticket, and you can't get any improvements if there's new
+tech/libraries come along. So I want to do that by building a library / package / dependency that
+you can gradually use, and you can just update the version when there's new feature or bugfix.
+
 ## License
 
 ```
