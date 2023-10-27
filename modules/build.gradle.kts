@@ -31,11 +31,10 @@ subprojects {
 
     configure<com.android.build.gradle.LibraryExtension> {
         namespace = "arc.$name"
-        compileSdk = 31
+        compileSdk = 34
 
         defaultConfig {
             minSdk = 21
-            targetSdk = 31
             testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
             consumerProguardFiles("consumer-rules.pro")
         }
@@ -78,7 +77,7 @@ subprojects {
     tasks.withType<org.jetbrains.dokka.gradle.DokkaTaskPartial>().configureEach {
         dokkaSourceSets {
             getByName("main") {
-                moduleName.set(project.name[0].toUpperCase() + project.name.substring(1))
+                moduleName.set(project.name[0].uppercaseChar() + project.name.substring(1))
                 reportUndocumented.set(false)
                 skipDeprecated.set(false)
                 skipEmptyPackages.set(true)

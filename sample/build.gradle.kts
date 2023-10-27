@@ -4,12 +4,13 @@ plugins {
 }
 
 android {
-    compileSdk = 31
+    compileSdk = 34
+    namespace = "com.jimlyas.sample"
 
     defaultConfig {
         applicationId = "com.jimlyas.sample"
         minSdk = 21
-        targetSdk = 31
+        targetSdk = 34
         versionCode = 1
         versionName = "0.1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -37,13 +38,6 @@ android {
                 "proguard-rules.pro"
             )
         }
-    }
-
-    bundle {
-        language { enableSplit = true }
-        density { enableSplit = true }
-        abi { enableSplit = true }
-        texture { enableSplit = true }
     }
 
     compileOptions {
