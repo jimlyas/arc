@@ -3,16 +3,22 @@ package arc.utilities.extension
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
-import android.content.pm.ApplicationInfo
-import android.media.RingtoneManager
+import android.content.Context.NOTIFICATION_SERVICE
+import android.content.pm.ApplicationInfo.FLAG_DEBUGGABLE
+import android.media.RingtoneManager.TYPE_NOTIFICATION
+import android.media.RingtoneManager.getDefaultUri
 import android.net.Uri
 import android.os.Build
+import android.os.Build.VERSION.SDK_INT
 import android.widget.Toast
+import android.widget.Toast.LENGTH_LONG
+import android.widget.Toast.LENGTH_SHORT
 import androidx.annotation.DrawableRes
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.browser.customtabs.CustomTabsIntent.COLOR_SCHEME_SYSTEM
 import androidx.browser.customtabs.CustomTabsIntent.SHARE_STATE_OFF
 import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationCompat.BigTextStyle
 import arc.utilities.R
 import arc.utilities.security.AMAZON_APP_STORE
 import arc.utilities.security.DeviceChecker
@@ -55,7 +61,7 @@ object ContextExtension {
      * Variable to check does the current application is debuggable or not
      */
     val Context.isDebuggable: Boolean
-        get() = (applicationInfo.flags and ApplicationInfo.FLAG_DEBUGGABLE) != 0
+        get() = (applicationInfo.flags and FLAG_DEBUGGABLE) != 0
 
     /**
      * Extension function of [Context] to display
@@ -64,10 +70,7 @@ object ContextExtension {
      * @receiver [Context]
      */
     fun Context.showToast(message: String, isItLong: Boolean = false) {
-        Toast.makeText(
-            this, message,
-            if (isItLong) Toast.LENGTH_LONG else Toast.LENGTH_SHORT
-        ).show()
+        Toast.makeText(this, message, if (isItLong) LENGTH_LONG else LENGTH_SHORT).show()
     }
 
     /**
@@ -117,15 +120,15 @@ object ContextExtension {
         notificationId: Int = 0,
         pendingIntent: PendingIntent? = null
     ) {
-        ((this).getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager).notify(
+        ((this).getSystemService(NOTIFICATION_SERVICE) as NotificationManager).notify(
             notificationId,
             NotificationCompat.Builder(this, channelId).apply {
                 setSmallIcon(icon)
                 setContentTitle(title)
                 setContentText(message)
-                setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                setSound(getDefaultUri(TYPE_NOTIFICATION))
                 setContentIntent(pendingIntent)
-                setStyle(NotificationCompat.BigTextStyle().bigText(message))
+                setStyle(BigTextStyle().bigText(message))
             }.build()
         )
     }
@@ -138,7 +141,7 @@ object ContextExtension {
      */
     @Suppress("DEPRECATION")
     fun Context.verifyInstaller(): Boolean {
-        val packageNameInstaller = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
+        val packageNameInstaller = if (SDK_INT >= Build.VERSION_CODES.R)
             packageManager.getInstallSourceInfo(packageName).installingPackageName
         else
             packageManager.getInstallerPackageName(packageName)

@@ -1,7 +1,8 @@
 package arc.utilities.extension
 
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
+import java.util.Locale
 
 /**
  * [DateExtension] contains extension function to manipulate [Date] formatting and parsing

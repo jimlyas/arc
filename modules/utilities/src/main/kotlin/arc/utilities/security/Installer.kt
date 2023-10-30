@@ -1,6 +1,7 @@
 package arc.utilities.security
 
 import androidx.annotation.StringDef
+import kotlin.annotation.AnnotationRetention.SOURCE
 
 /**
  * [Installer] annotation class to define all verified app installer
@@ -10,7 +11,7 @@ import androidx.annotation.StringDef
  * Copyright © 2022-2023 jimlyas. All rights reserved.
  */
 @StringDef(GOOGLE_PLAY_STORE, AMAZON_APP_STORE, HUAWEI_APP_GALLERY)
-@Retention(AnnotationRetention.SOURCE)
+@Retention(SOURCE)
 annotation class Installer
 
 

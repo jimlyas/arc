@@ -5,7 +5,8 @@ import android.util.Base64.encodeToString
 import android.webkit.MimeTypeMap
 import java.io.File
 import java.text.NumberFormat
-import java.util.*
+import java.util.Base64
+import java.util.Locale
 
 /**
  * [StringExtension] contains extension function to parse and format [String] to other form

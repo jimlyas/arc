@@ -8,6 +8,7 @@ import arc.utilities.security.DeviceChecker.ROOTED
 import arc.utilities.security.DeviceChecker.SAFE
 import com.framgia.android.emulator.EmulatorDetector
 import com.scottyab.rootbeer.RootBeer
+import kotlin.annotation.AnnotationRetention.SOURCE
 
 /**
  * [DeviceChecker] [Object] to validate tampered device
@@ -25,7 +26,7 @@ object DeviceChecker {
     const val SAFE = 1
 
     @IntDef(EMULATOR, ROOTED, SAFE)
-    @Retention(AnnotationRetention.SOURCE)
+    @Retention(SOURCE)
     annotation class SecurityCheck
 
     /**
