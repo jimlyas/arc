@@ -2,9 +2,10 @@ package arc.presentation.fragment
 
 import android.annotation.TargetApi
 import android.content.Context
-import android.content.pm.PackageManager
+import android.content.pm.PackageManager.PERMISSION_GRANTED
 import android.net.Uri
-import android.os.Build
+import android.os.Build.VERSION.SDK_INT
+import android.os.Build.VERSION_CODES.M
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -61,7 +62,7 @@ abstract class ArcFragment<viewBinding : ViewBinding> : Fragment(),
      * @param onPermissionGranted action to do when permission granted
      * @param onPermissionNotGranted action to do when permission not granted
      */
-    @TargetApi(Build.VERSION_CODES.M)
+    @TargetApi(M)
     fun requestPermissionsSafely(
         permissions: Array<String>,
         onPermissionGranted: (() -> Unit)? = null,
@@ -79,17 +80,16 @@ abstract class ArcFragment<viewBinding : ViewBinding> : Fragment(),
      * @param permission name of the permission to check
      * @return is the application has the permission?
      */
-    @TargetApi(Build.VERSION_CODES.M)
+    @TargetApi(M)
     fun checkPermission(permission: String) =
-        Build.VERSION.SDK_INT < Build.VERSION_CODES.M ||
-                currentActivity.checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED
+        SDK_INT < M || currentActivity.checkSelfPermission(permission) == PERMISSION_GRANTED
 
     /**
      * Function to check if the application has permissions
      * @param permissions array of the permission to check
      * @return is the application has the permissions?
      */
-    @TargetApi(Build.VERSION_CODES.M)
+    @TargetApi(M)
     fun checkPermissions(permissions: List<String>) = currentActivity.checkPermissions(permissions)
 
     /**

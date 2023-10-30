@@ -1,7 +1,8 @@
 package arc.presentation.camerax
 
 import androidx.camera.core.Camera
-import androidx.camera.core.CameraSelector
+import androidx.camera.core.CameraSelector.LENS_FACING_BACK
+import androidx.camera.core.CameraSelector.LensFacing
 import androidx.camera.view.PreviewView
 import arc.presentation.activity.ArcActivity
 import arc.presentation.fragment.ArcFragment
@@ -22,7 +23,7 @@ import arc.presentation.fragment.ArcFragment
  */
 fun ArcActivity<*>.setupCameraX(
     view: PreviewView,
-    @CameraSelector.LensFacing lensFacing: Int = CameraSelector.LENS_FACING_BACK
+    @LensFacing lensFacing: Int = LENS_FACING_BACK
 ) = CameraXSetup(view, this, lensFacing)
 
 /**
@@ -34,5 +35,5 @@ fun ArcActivity<*>.setupCameraX(
  */
 fun ArcFragment<*>.setupCameraX(
     view: PreviewView,
-    @CameraSelector.LensFacing lensFacing: Int = CameraSelector.LENS_FACING_BACK
+    @LensFacing lensFacing: Int = LENS_FACING_BACK
 ) = CameraXSetup(view, this, lensFacing)

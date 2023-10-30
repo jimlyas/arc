@@ -3,13 +3,14 @@ package arc.presentation.activity
 import android.annotation.TargetApi
 import android.app.Activity
 import android.content.Intent
-import android.content.pm.PackageManager
+import android.content.pm.PackageManager.PERMISSION_GRANTED
 import android.net.Uri
-import android.os.Build
+import android.os.Build.VERSION.SDK_INT
+import android.os.Build.VERSION_CODES.M
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.WindowManager
+import android.view.WindowManager.LayoutParams.FLAG_SECURE
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,7 @@ import androidx.viewbinding.ViewBinding
 import arc.presentation.delegation.navigation.NavigationDelegate
 import arc.presentation.delegation.navigation.NavigationDelegation
 import arc.presentation.extension.ViewBindingExtension.inflateViewBinding
+import java.io.Serializable
 
 /**
  * [ArcActivity] define base class for [Activity] for project
@@ -88,17 +90,16 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
      * @param permission name of the permission to check
      * @return Does the application has the requested permission?
      */
-    @TargetApi(Build.VERSION_CODES.M)
+    @TargetApi(M)
     fun checkPermission(permission: String) =
-        Build.VERSION.SDK_INT < Build.VERSION_CODES.M ||
-                checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED
+        SDK_INT < M || checkSelfPermission(permission) == PERMISSION_GRANTED
 
     /**
      * Function to check if the application has permissions
      * @param permissions array of the permission to check
      * @return Does the application has the requested permissions?
      */
-    @TargetApi(Build.VERSION_CODES.M)
+    @TargetApi(M)
     fun checkPermissions(permissions: List<String>): Boolean {
         var result = true
         permissions.forEach {
@@ -133,7 +134,7 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
      * @param onPermissionGranted action to do when permission granted
      * @param onPermissionNotGranted action to do when permission not granted
      */
-    @TargetApi(Build.VERSION_CODES.M)
+    @TargetApi(M)
     fun requestPermissionsSafely(
         permissions: Array<String>,
         onPermissionGranted: (() -> Unit)? = null,
@@ -152,17 +153,14 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
      * Function to prevent screenshot and screen recording any page from within the application
      */
     protected fun secureScreen() {
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_SECURE,
-            WindowManager.LayoutParams.FLAG_SECURE
-        )
+        window.setFlags(FLAG_SECURE, FLAG_SECURE)
     }
 
     /**
      * Function to clear screenshot and screen recording prevention
      */
     protected fun clearSecureScreen() {
-        window.clearFlags(WindowManager.LayoutParams.FLAG_SECURE)
+        window.clearFlags(FLAG_SECURE)
     }
 
     /**
@@ -218,7 +216,7 @@ abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null
     inline fun <reified activity : ArcActivity<*>> start(
         isFinished: Boolean = false,
         flags: List<Int> = listOf(),
-        args: MutableMap<String, java.io.Serializable> = mutableMapOf()
+        args: MutableMap<String, Serializable> = mutableMapOf()
     ) {
         startActivity(Intent(this, activity::class.java).apply {
             flags.forEach(::addFlags)
