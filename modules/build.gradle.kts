@@ -1,3 +1,7 @@
+import com.android.build.gradle.LibraryExtension
+import org.jetbrains.dokka.gradle.DokkaMultiModuleTask
+import org.jetbrains.dokka.gradle.DokkaTaskPartial
+
 plugins {
     id("java-platform")
     id("org.jetbrains.dokka")
@@ -6,12 +10,12 @@ plugins {
 group = "io.github.jimlyas"
 version = "0.1.0"
 
-tasks.withType(org.jetbrains.dokka.gradle.DokkaMultiModuleTask::class.java).configureEach {
+tasks.withType<DokkaMultiModuleTask>().configureEach {
     moduleName.set("ARC")
     outputDirectory.set(file("$rootDir/docs/src/api"))
     pluginsMapConfiguration.set(
         mapOf(
-            "org.jetbrains.dokka.base.DokkaBase" to """{ 
+            "org.jetbrains.dokka.base.DokkaBase" to """{
                     "footerMessage": "Copyright © 2022-2023 jimlyas. All rights reserved.",
                      "customAssets" : ["${file("logo-icon.svg")}"]
                  }"""
@@ -29,7 +33,7 @@ subprojects {
     group = "io.github.jimlyas"
     version = "0.1.0"
 
-    configure<com.android.build.gradle.LibraryExtension> {
+    configure<LibraryExtension> {
         namespace = "arc.$name"
         compileSdk = 34
 
@@ -56,13 +60,13 @@ subprojects {
             }
         }
         publishing {
-            singleVariant("debug") {
-                withSourcesJar()
+            multipleVariants("full") {
+                includeBuildTypeValues("debug", "release")
             }
         }
         compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_1_8
-            targetCompatibility = JavaVersion.VERSION_1_8
+            sourceCompatibility = JavaVersion.VERSION_17
+            targetCompatibility = JavaVersion.VERSION_17
         }
         buildFeatures {
             viewBinding = true
@@ -74,24 +78,25 @@ subprojects {
         }
     }
 
-    tasks.withType<org.jetbrains.dokka.gradle.DokkaTaskPartial>().configureEach {
+    tasks.withType<DokkaTaskPartial>().configureEach {
         dokkaSourceSets {
             getByName("main") {
                 moduleName.set(project.name[0].uppercaseChar() + project.name.substring(1))
+                moduleVersion.set(project.version.toString())
                 reportUndocumented.set(false)
                 skipDeprecated.set(false)
                 skipEmptyPackages.set(true)
                 suppressObviousFunctions.set(true)
                 suppressInheritedMembers.set(true)
-                jdkVersion.set(11)
+                jdkVersion.set(17)
                 noStdlibLink.set(false)
                 noJdkLink.set(false)
                 noAndroidSdkLink.set(false)
-                sourceRoots.setFrom(file("$projectDir/src/main/java"))
+                sourceRoots.setFrom(file("$projectDir/src/main/kotlin"))
                 includes.setFrom(files("$projectDir/packages.md"))
                 sourceLink {
-                    localDirectory.set(file("src/main/java"))
-                    remoteUrl.set(uri("${baseRepositoryURL}/src/main/java").toURL())
+                    localDirectory.set(file("src/main/kotlin"))
+                    remoteUrl.set(uri("${baseRepositoryURL}/src/main/kotlin").toURL())
                     remoteLineSuffix.set("#L")
                 }
                 pluginsMapConfiguration.set(

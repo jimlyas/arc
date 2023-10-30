@@ -1,7 +1,18 @@
 package arc.presentation.camerax
 
-import android.view.MotionEvent
-import androidx.camera.core.*
+import android.view.MotionEvent.ACTION_DOWN
+import android.view.MotionEvent.ACTION_UP
+import androidx.camera.core.AspectRatio
+import androidx.camera.core.AspectRatio.RATIO_16_9
+import androidx.camera.core.AspectRatio.RATIO_4_3
+import androidx.camera.core.Camera
+import androidx.camera.core.CameraSelector
+import androidx.camera.core.CameraX
+import androidx.camera.core.FocusMeteringAction.Builder
+import androidx.camera.core.FocusMeteringAction.FLAG_AF
+import androidx.camera.core.Preview
+import androidx.camera.core.SurfaceOrientedMeteringPointFactory
+import androidx.camera.core.UseCase
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.core.content.ContextCompat
@@ -59,21 +70,19 @@ class CameraXSetup(
         view.setOnTouchListener { _, motionEvent ->
             view.performClick()
             return@setOnTouchListener when (motionEvent.action) {
-                MotionEvent.ACTION_DOWN -> true
-                MotionEvent.ACTION_UP -> {
+                ACTION_DOWN -> true
+                ACTION_UP -> {
                     val factory = SurfaceOrientedMeteringPointFactory(
                         view.width.toFloat(),
                         view.height.toFloat()
                     )
                     val autoFocusPoint = factory.createPoint(motionEvent.x, motionEvent.y)
                     camera.cameraControl.startFocusAndMetering(
-                        FocusMeteringAction.Builder(
-                            autoFocusPoint,
-                            FocusMeteringAction.FLAG_AF
-                        ).apply { disableAutoCancel() }.build()
+                        Builder(autoFocusPoint, FLAG_AF).apply { disableAutoCancel() }.build()
                     )
                     true
                 }
+
                 else -> false
             }
         }
@@ -104,8 +113,6 @@ class CameraXSetup(
     private fun aspectRatio(width: Int, height: Int): Int {
         val previewRatio = max(width, height).toDouble() / min(width, height)
         return if (abs(previewRatio - RATIO_4_3) <= abs(previewRatio - RATIO_16_9))
-            AspectRatio.RATIO_4_3
-        else
-            AspectRatio.RATIO_16_9
+            AspectRatio.RATIO_4_3 else AspectRatio.RATIO_16_9
     }
 }
