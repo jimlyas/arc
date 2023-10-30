@@ -92,6 +92,7 @@ subprojects {
         coordinates(group.toString(), name.toString(), version.toString())
         pom {
             name.set(name.toString())
+            description.set("ARC $name module library")
         }
     }
 
