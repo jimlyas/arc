@@ -13,6 +13,8 @@ import androidx.camera.core.FocusMeteringAction.FLAG_AF
 import androidx.camera.core.Preview
 import androidx.camera.core.SurfaceOrientedMeteringPointFactory
 import androidx.camera.core.UseCase
+import androidx.camera.core.resolutionselector.AspectRatioStrategy.RATIO_16_9_FALLBACK_AUTO_STRATEGY
+import androidx.camera.core.resolutionselector.ResolutionSelector
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.core.content.ContextCompat
@@ -56,11 +58,9 @@ class CameraXSetup(
     init {
         val camera = cameraProvider.bindToLifecycle(lifeCycle, cameraSelector,
             Preview.Builder()
-                .setTargetAspectRatio(
-                    aspectRatio(
-                        view.context.resources.displayMetrics.widthPixels,
-                        view.context.resources.displayMetrics.heightPixels
-                    )
+                .setResolutionSelector(
+                    ResolutionSelector.Builder()
+                        .setAspectRatioStrategy(RATIO_16_9_FALLBACK_AUTO_STRATEGY).build()
                 )
                 .setTargetRotation(view.display.rotation)
                 .build()

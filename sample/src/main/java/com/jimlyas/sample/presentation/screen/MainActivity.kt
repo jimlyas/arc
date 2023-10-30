@@ -1,4 +1,4 @@
-package com.jimlyas.sample.presentation
+package com.jimlyas.sample.presentation.screen
 
 import arc.presentation.activity.ArcActivity
 import com.jimlyas.sample.R
