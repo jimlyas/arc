@@ -1,6 +1,7 @@
 import com.android.build.gradle.LibraryExtension
 import org.jetbrains.dokka.gradle.DokkaMultiModuleTask
 import org.jetbrains.dokka.gradle.DokkaTaskPartial
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("java-platform")
@@ -76,6 +77,10 @@ subprojects {
             abortOnError = false
             disable += "Instantiatable"
         }
+    }
+
+    tasks.withType<KotlinCompile>().configureEach {
+        kotlinOptions { freeCompilerArgs += "-Xcontext-receivers" }
     }
 
     tasks.withType<DokkaTaskPartial>().configureEach {

@@ -6,6 +6,8 @@ import androidx.core.content.ContextCompat.RECEIVER_EXPORTED
 import androidx.core.content.ContextCompat.RECEIVER_NOT_EXPORTED
 import androidx.core.content.ContextCompat.registerReceiver
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.Lifecycle.Event.ON_DESTROY
+import androidx.lifecycle.Lifecycle.Event.ON_START
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
 import arc.utilities.context.GlobalContext
@@ -27,9 +29,9 @@ abstract class ArcBroadcastReceiver : BroadcastReceiver(), LifecycleEventObserve
     abstract fun exported(): Boolean
 
     override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
-        if (event == Lifecycle.Event.ON_START) registerReceiver(
+        if (event == ON_START) registerReceiver(
             ctx, this, broadcastIntent(),
             if (exported()) RECEIVER_EXPORTED else RECEIVER_NOT_EXPORTED
-        ) else if (event == Lifecycle.Event.ON_DESTROY) ctx.unregisterReceiver(this)
+        ) else if (event == ON_DESTROY) ctx.unregisterReceiver(this)
     }
 }
