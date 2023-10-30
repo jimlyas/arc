@@ -1,6 +1,6 @@
 rootProject.name = "arc"
 include(":sample", ":modules", ":modules:data", ":modules:presentation", ":modules:utilities")
-listOf("TYPESAFE_PROJECT_ACCESSORS").forEach { enableFeaturePreview(it) }
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
     repositories {
