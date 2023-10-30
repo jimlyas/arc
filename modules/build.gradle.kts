@@ -89,7 +89,6 @@ subprojects {
     }
 
     configure<MavenPublishBaseExtension>() {
-        publishToMavenCentral(S01)
         coordinates(group.toString(), name.toString(), version.toString())
         pom {
             name.set(name.toString())
