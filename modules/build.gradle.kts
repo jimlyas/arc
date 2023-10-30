@@ -1,5 +1,6 @@
 import com.android.build.gradle.LibraryExtension
 import com.vanniktech.maven.publish.MavenPublishBaseExtension
+import com.vanniktech.maven.publish.SonatypeHost.Companion.S01
 import org.jetbrains.dokka.gradle.DokkaMultiModuleTask
 import org.jetbrains.dokka.gradle.DokkaTaskPartial
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -65,8 +66,6 @@ subprojects {
         }
 
         publishing {
-            singleVariant("debug") { withSourcesJar() }
-            singleVariant("release") { withSourcesJar() }
             multipleVariants("full") {
                 allVariants()
                 withSourcesJar()
@@ -90,6 +89,7 @@ subprojects {
     }
 
     configure<MavenPublishBaseExtension>() {
+        publishToMavenCentral(S01)
         coordinates(group.toString(), name.toString(), version.toString())
         pom {
             name.set(name.toString())
