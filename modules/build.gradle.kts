@@ -92,7 +92,7 @@ subprojects {
             register<MavenPublication>("debug") {
                 afterEvaluate {
                     this@register.groupId = group.toString()
-                    this@register.artifactId = "arc-$name"
+                    this@register.artifactId = name
                     this@register.version = version.toString()
                     from(components["debug"])
                 }
