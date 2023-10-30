@@ -2,10 +2,13 @@ import com.android.build.gradle.LibraryExtension
 import org.jetbrains.dokka.gradle.DokkaMultiModuleTask
 import org.jetbrains.dokka.gradle.DokkaTaskPartial
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import java.lang.System.getenv
+import java.net.URI
 
 plugins {
     id("java-platform")
     id("org.jetbrains.dokka")
+    id("maven-publish")
 }
 
 group = "io.github.jimlyas"
@@ -27,6 +30,7 @@ tasks.withType<DokkaMultiModuleTask>().configureEach {
 subprojects {
     apply(plugin = "com.android.library")
     apply(plugin = "kotlin-android")
+    apply(plugin = "maven-publish")
     apply(plugin = "org.jetbrains.dokka")
 
     val baseRepositoryURL = "https://github.com/jimlyas/arc/blob/main/modules/${project.name}"
@@ -53,29 +57,57 @@ subprojects {
                 )
             }
             release {
-                isMinifyEnabled = true
+                isMinifyEnabled = false
                 proguardFiles(
                     getDefaultProguardFile("proguard-android-optimize.txt"),
                     "proguard-rules.pro"
                 )
             }
         }
+
         publishing {
-            multipleVariants("full") {
-                includeBuildTypeValues("debug", "release")
-            }
+            singleVariant("debug")
+            singleVariant("release")
+            multipleVariants("full") { allVariants() }
         }
+
         compileOptions {
             sourceCompatibility = JavaVersion.VERSION_17
             targetCompatibility = JavaVersion.VERSION_17
         }
+
         buildFeatures {
             viewBinding = true
             buildConfig = false
         }
+
         lint {
             abortOnError = false
             disable += "Instantiatable"
+        }
+    }
+
+    publishing {
+        publications {
+            register<MavenPublication>("debug") {
+                afterEvaluate {
+                    this@register.groupId = group.toString()
+                    this@register.artifactId = "arc-$name"
+                    this@register.version = version.toString()
+                    from(components["debug"])
+                }
+            }
+        }
+
+        repositories {
+            maven {
+                name = "staging"
+                url = URI("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
+                credentials {
+                    username = getenv("MAVEN_USERNAME")
+                    password = getenv("MAVEN_PASSWORD")
+                }
+            }
         }
     }
 
