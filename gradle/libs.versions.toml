@@ -11,6 +11,7 @@ material = "1.10.0"
 navigation = "2.7.4"
 okhttp3 = "5.0.0-alpha.9"
 paging = "3.2.1"
+publish = "0.25.3"
 retrofit = "2.9.0"
 room = "2.6.0"
 room-paging = "2.6.0"
@@ -50,3 +51,4 @@ app = { id = "com.android.application", version.ref = "android" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "kotlin" }
 kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 lib = { id = "com.android.library", version.ref = "android" }
+publish = { id = "com.vanniktech.maven.publish", version.ref = "publish" }

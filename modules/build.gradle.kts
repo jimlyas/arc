@@ -1,14 +1,13 @@
 import com.android.build.gradle.LibraryExtension
+import com.vanniktech.maven.publish.MavenPublishBaseExtension
 import org.jetbrains.dokka.gradle.DokkaMultiModuleTask
 import org.jetbrains.dokka.gradle.DokkaTaskPartial
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import java.lang.System.getenv
-import java.net.URI
 
 plugins {
     id("java-platform")
-    id("org.jetbrains.dokka")
     id("maven-publish")
+    id("org.jetbrains.dokka")
 }
 
 group = "io.github.jimlyas"
@@ -30,7 +29,7 @@ tasks.withType<DokkaMultiModuleTask>().configureEach {
 subprojects {
     apply(plugin = "com.android.library")
     apply(plugin = "kotlin-android")
-    apply(plugin = "maven-publish")
+    apply(plugin = "com.vanniktech.maven.publish")
     apply(plugin = "org.jetbrains.dokka")
 
     val baseRepositoryURL = "https://github.com/jimlyas/arc/blob/main/modules/${project.name}"
@@ -66,9 +65,12 @@ subprojects {
         }
 
         publishing {
-            singleVariant("debug")
-            singleVariant("release")
-            multipleVariants("full") { allVariants() }
+            singleVariant("debug") { withSourcesJar() }
+            singleVariant("release") { withSourcesJar() }
+            multipleVariants("full") {
+                allVariants()
+                withSourcesJar()
+            }
         }
 
         compileOptions {
@@ -87,27 +89,10 @@ subprojects {
         }
     }
 
-    publishing {
-        publications {
-            register<MavenPublication>("debug") {
-                afterEvaluate {
-                    this@register.groupId = group.toString()
-                    this@register.artifactId = name
-                    this@register.version = version.toString()
-                    from(components["debug"])
-                }
-            }
-        }
-
-        repositories {
-            maven {
-                name = "staging"
-                url = URI("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
-                credentials {
-                    username = getenv("MAVEN_USERNAME")
-                    password = getenv("MAVEN_PASSWORD")
-                }
-            }
+    configure<MavenPublishBaseExtension>() {
+        coordinates(group.toString(), name.toString(), version.toString())
+        pom {
+            name.set(name.toString())
         }
     }
 
