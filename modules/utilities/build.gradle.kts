@@ -1,5 +1,3 @@
-version = "0.1.1"
-
 dependencies {
     implementation(libs.ktx)
     implementation(libs.compat)

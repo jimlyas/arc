@@ -13,7 +13,7 @@ plugins {
 }
 
 group = "io.github.jimlyas"
-version = "0.1.0"
+version = "0.1.1"
 
 tasks.withType<DokkaMultiModuleTask>().configureEach {
     moduleName.set(rootProject.name)
@@ -63,7 +63,7 @@ subprojects {
     val baseRepositoryURL = "https://github.com/jimlyas/arc/blob/main/modules/${project.name}"
 
     group = "io.github.jimlyas"
-    version = "0.1.0"
+    version = "0.1.2"
 
     configure<LibraryExtension> {
         namespace = "arc.$name"
