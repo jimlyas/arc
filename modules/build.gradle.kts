@@ -1,6 +1,7 @@
 import com.android.build.gradle.LibraryExtension
 import com.vanniktech.maven.publish.MavenPublishBaseExtension
 import org.gradle.api.JavaVersion.VERSION_17
+import org.jetbrains.dokka.Platform.native
 import org.jetbrains.dokka.gradle.DokkaMultiModuleTask
 import org.jetbrains.dokka.gradle.DokkaTaskPartial
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -122,10 +123,11 @@ subprojects {
     }
 
     tasks.withType<DokkaTaskPartial>().configureEach {
+        moduleName.set(project.name[0].uppercaseChar() + project.name.substring(1))
+        moduleVersion.set(project.version.toString())
+
         dokkaSourceSets {
             getByName("main") {
-                moduleName.set(project.name[0].uppercaseChar() + project.name.substring(1))
-                moduleVersion.set(project.version.toString())
                 reportUndocumented.set(false)
                 skipDeprecated.set(false)
                 skipEmptyPackages.set(true)
@@ -135,6 +137,7 @@ subprojects {
                 noStdlibLink.set(false)
                 noJdkLink.set(false)
                 noAndroidSdkLink.set(false)
+                platform.set(native)
                 sourceRoots.setFrom(file("$projectDir/src/main/kotlin"))
                 includes.setFrom(files("$projectDir/packages.md"))
                 sourceLink {

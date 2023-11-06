@@ -1,14 +1,16 @@
-name: Publish new documentation
+name: Publish new release
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      versionName:
+        description: "Version Name"
+        required: true
 jobs:
   documentation:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:
@@ -42,3 +44,21 @@ jobs:
         run: pip install mkdocs-material mkdocs-macros-plugin mkdocs-minify-plugin mkdocs-glightbox pillow cairosvg
       - name: Deploy documentation with mkdocs
         run: mkdocs gh-deploy --force
+      - name: Build with Gradle
+        run: |
+          ./gradlew build
+      - name: Create new tag
+        run: |
+          git config --global user.email "gmail@jimlyas.com"
+          git config --global user.name "jimlyas"
+          git tag -a $TAG -m "Release v$TAG"
+          git push origin $TAG
+        env:
+          TAG: ${{ github.event.inputs.versionName }}
+      - name: Create new release
+        uses: ncipollo/release-action@v1
+        with:
+          name: ${{ github.event.inputs.versionName }}
+          tag: ${{ github.event.inputs.versionName }}
+          artifacts: "modules/data/build/outputs/aar/data-debug.aar,modules/presentation/build/outputs/aar/presentation-debug.aar,modules/utilities/build/outputs/aar/utilities-debug.aar"
+          body: "new release"
