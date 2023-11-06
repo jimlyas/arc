@@ -1,6 +1,5 @@
 import com.android.build.gradle.LibraryExtension
 import com.vanniktech.maven.publish.MavenPublishBaseExtension
-import com.vanniktech.maven.publish.SonatypeHost.Companion.S01
 import org.jetbrains.dokka.gradle.DokkaMultiModuleTask
 import org.jetbrains.dokka.gradle.DokkaTaskPartial
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -8,6 +7,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("java-platform")
     id("maven-publish")
+    id("com.vanniktech.maven.publish")
     id("org.jetbrains.dokka")
 }
 
@@ -25,6 +25,21 @@ tasks.withType<DokkaMultiModuleTask>().configureEach {
                  }"""
         )
     )
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("arcPlatform") {
+            from(components["javaPlatform"])
+        }
+    }
+}
+
+configure<MavenPublishBaseExtension>() {
+    coordinates(project.group.toString(), project.name.toString(), project.version.toString())
+    pom {
+        name.set(project.name.toString())
+    }
 }
 
 subprojects {
@@ -89,10 +104,14 @@ subprojects {
     }
 
     configure<MavenPublishBaseExtension>() {
-        coordinates(group.toString(), name.toString(), version.toString())
+        coordinates(
+            project.group.toString(),
+            project.name.toString(),
+            project.version.toString()
+        )
         pom {
-            name.set(name.toString())
-            description.set("ARC $name module library")
+            name.set(project.name)
+            description.set("ARC ${project.name} module library")
         }
     }
 
