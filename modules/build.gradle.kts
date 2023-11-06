@@ -1,7 +1,6 @@
 import com.android.build.gradle.LibraryExtension
 import com.vanniktech.maven.publish.MavenPublishBaseExtension
 import org.gradle.api.JavaVersion.VERSION_17
-import org.jetbrains.dokka.Platform.native
 import org.jetbrains.dokka.gradle.DokkaMultiModuleTask
 import org.jetbrains.dokka.gradle.DokkaTaskPartial
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -37,11 +36,13 @@ publishing {
     }
 }
 
-configure<MavenPublishBaseExtension> {
-    coordinates(project.group.toString(), rootProject.name, project.version.toString())
-    pom {
-        name.set(rootProject.name)
-        description.set("Arc Java Platform for managing modules version")
+afterEvaluate {
+    configure<MavenPublishBaseExtension> {
+        coordinates(project.group.toString(), rootProject.name, project.version.toString())
+        pom {
+            name.set(rootProject.name)
+            description.set("Arc Java Platform for managing modules version")
+        }
     }
 }
 
@@ -106,15 +107,17 @@ subprojects {
         }
     }
 
-    configure<MavenPublishBaseExtension> {
-        coordinates(
-            project.group.toString(),
-            project.name.toString(),
-            project.version.toString()
-        )
-        pom {
-            name.set(project.name)
-            description.set("ARC ${project.name} module library")
+    afterEvaluate {
+        configure<MavenPublishBaseExtension> {
+            coordinates(
+                this@subprojects.group.toString(),
+                this@subprojects.name.toString(),
+                this@subprojects.version.toString()
+            )
+            pom {
+                name.set(this@subprojects.name)
+                description.set("ARC ${this@subprojects.name} module library")
+            }
         }
     }
 
@@ -137,7 +140,6 @@ subprojects {
                 noStdlibLink.set(false)
                 noJdkLink.set(false)
                 noAndroidSdkLink.set(false)
-                platform.set(native)
                 sourceRoots.setFrom(file("$projectDir/src/main/kotlin"))
                 includes.setFrom(files("$projectDir/packages.md"))
                 sourceLink {
