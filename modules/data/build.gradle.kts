@@ -14,6 +14,8 @@ dependencies {
 
     api(libs.okhttp3)
 
+    api(libs.android.security)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.bundles.android.test)
 }

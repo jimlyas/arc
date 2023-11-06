@@ -1,5 +1,6 @@
 import com.android.build.gradle.LibraryExtension
 import com.vanniktech.maven.publish.MavenPublishBaseExtension
+import org.gradle.api.JavaVersion.VERSION_17
 import org.jetbrains.dokka.gradle.DokkaMultiModuleTask
 import org.jetbrains.dokka.gradle.DokkaTaskPartial
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -35,8 +36,8 @@ publishing {
     }
 }
 
-configure<MavenPublishBaseExtension>() {
-    coordinates(project.group.toString(), project.name.toString(), project.version.toString())
+configure<MavenPublishBaseExtension> {
+    coordinates(project.group.toString(), "ARC", project.version.toString())
     pom {
         name.set("ARC")
         description.set("Arc Java Platform for managing modules version")
@@ -89,8 +90,8 @@ subprojects {
         }
 
         compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_17
-            targetCompatibility = JavaVersion.VERSION_17
+            sourceCompatibility = VERSION_17
+            targetCompatibility = VERSION_17
         }
 
         buildFeatures {
@@ -104,7 +105,7 @@ subprojects {
         }
     }
 
-    configure<MavenPublishBaseExtension>() {
+    configure<MavenPublishBaseExtension> {
         coordinates(
             project.group.toString(),
             project.name.toString(),
