@@ -46,6 +46,14 @@ afterEvaluate {
     }
 }
 
+dependencies {
+    constraints {
+        api(projects.modules.data)
+        api(projects.modules.presentation)
+        api(projects.modules.utilities)
+    }
+}
+
 subprojects {
     apply(plugin = "com.android.library")
     apply(plugin = "kotlin-android")
@@ -111,7 +119,7 @@ subprojects {
         configure<MavenPublishBaseExtension> {
             coordinates(
                 this@subprojects.group.toString(),
-                this@subprojects.name.toString(),
+                "ARC-" + this@subprojects.name.toString(),
                 this@subprojects.version.toString()
             )
             pom {

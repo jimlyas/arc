@@ -30,6 +30,7 @@ jobs:
           ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.SIGNING_KEY }}
   documentation:
     runs-on: ubuntu-latest
+    needs: publish
     steps:
       - name: Checkout branch code
         uses: actions/checkout@v3
@@ -56,6 +57,7 @@ jobs:
         run: mkdocs gh-deploy --force
   release:
     runs-on: ubuntu-latest
+    needs: [ publish, documentation ]
     steps:
       - name: Checkout branch code
         uses: actions/checkout@v3
