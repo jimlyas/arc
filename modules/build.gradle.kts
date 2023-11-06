@@ -39,6 +39,7 @@ configure<MavenPublishBaseExtension>() {
     coordinates(project.group.toString(), project.name.toString(), project.version.toString())
     pom {
         name.set(project.name.toString())
+        description.set("Arc Java Platform for managing modules version")
     }
 }
 
