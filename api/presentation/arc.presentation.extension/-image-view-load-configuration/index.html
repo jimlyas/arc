@@ -1,0 +1,328 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>ImageViewLoadConfiguration</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script>
+<link href="../../../images/logo-icon.svg"></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>arc</span>            </a>    </div>
+    <div>0.1.1
+    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":modules:presentation:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="Presentation::arc.presentation.extension/ImageViewLoadConfiguration///PointingToDeclaration//-1361355514">
+  <div class="breadcrumbs"><a href="../../index.html">Presentation</a><span class="delimiter">/</span><a href="../index.html">arc.presentation.extension</a><span class="delimiter">/</span><span class="current">ImageViewLoadConfiguration</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Image</span><wbr><span>View</span><wbr><span>Load</span><wbr><span><span>Configuration</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">ImageViewLoadConfiguration</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">var </span>source<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>transformation<span class="token operator">: </span><a href="-image-transformation/index.html">ImageViewLoadConfiguration.ImageTransformation</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>progressBar<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/widget/ProgressBar.html">ProgressBar</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>onImageLoaded<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>onImageNotLoaded<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><p class="paragraph"><a href="index.html">ImageViewLoadConfiguration</a> define setup and configuration to load an image into <a href="https://developer.android.com/reference/kotlin/android/widget/ImageView.html">ImageView</a> using <span data-unresolved-link="com.bumptech.glide/Glide///PointingToDeclaration/">Glide</span></p><span class="kdoc-tag"><h4 class="">Author</h4><p class="paragraph">jimlyas</p></span><span class="kdoc-tag"><h4 class="">Since</h4><p class="paragraph">13 Jan 2023</p></span><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>source</span></span></u></div></span></div><div><div class="title"><p class="paragraph">the image source that will be loaded into <a href="https://developer.android.com/reference/kotlin/android/widget/ImageView.html">ImageView</a>, supported type is <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>, <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, and <a href="https://developer.android.com/reference/kotlin/android/graphics/drawable/Drawable.html">Drawable</a></p></div></div></div></div><div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>transformation</span></span></u></div></span></div><div><div class="title"><p class="paragraph"><a href="-image-transformation/index.html">ImageTransformation</a> to define how the size of the image will be displayed by the ratio of <a href="https://developer.android.com/reference/kotlin/android/widget/ImageView.html">ImageView</a></p></div></div></div></div><div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>progress</span><wbr><span><span>Bar</span></span></u></div></span></div><div><div class="title"><p class="paragraph"><a href="https://developer.android.com/reference/kotlin/android/widget/ProgressBar.html">ProgressBar</a> that will be listen when the image is loaded, will be displayed when the image still currently loading and will be hidden when the image already loaded, null by default</p></div></div></div></div><div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>on</span><wbr><span>Image</span><wbr><span><span>Loaded</span></span></u></div></span></div><div><div class="title"><p class="paragraph">listener for when the image is successfully loaded, null by default</p></div></div></div></div><div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>on</span><wbr><span>Image</span><wbr><span>Not</span><wbr><span><span>Loaded</span></span></u></div></span></div><div><div class="title"><p class="paragraph">listener for when the image is failed to load, null by default</p></div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,FUNCTION,PROPERTY">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="1747070432%2FConstructors%2F-1361355514" anchor-label="ImageViewLoadConfiguration" id="1747070432%2FConstructors%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-image-view-load-configuration.html"><span>Image</span><wbr><span>View</span><wbr><span>Load</span><wbr><span><span>Configuration</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1747070432%2FConstructors%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">source<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">transformation<span class="token operator">: </span><a href="-image-transformation/index.html">ImageViewLoadConfiguration.ImageTransformation</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">progressBar<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/widget/ProgressBar.html">ProgressBar</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">onImageLoaded<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">onImageNotLoaded<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="734440227%2FClasslikes%2F-1361355514" anchor-label="ImageTransformation" id="734440227%2FClasslikes%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-image-transformation/index.html"><span>Image</span><wbr><span><span>Transformation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="734440227%2FClasslikes%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-image-transformation/index.html">ImageTransformation</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-image-transformation/index.html">ImageViewLoadConfiguration.ImageTransformation</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">enum class that define image transformation for <span data-unresolved-link="com.bumptech.glide/Glide///PointingToDeclaration/">Glide</span></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="1281617941%2FFunctions%2F-1361355514" anchor-label="withErrorImage" id="1281617941%2FFunctions%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="with-error-image.html"><span>with</span><wbr><span>Error</span><wbr><span><span>Image</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1281617941%2FFunctions%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="with-error-image.html"><span class="token function">withErrorImage</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">errorImage<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Function to register error image when failed to load the source image</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="131745292%2FFunctions%2F-1361355514" anchor-label="withImageLoaded" id="131745292%2FFunctions%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="with-image-loaded.html"><span>with</span><wbr><span>Image</span><wbr><span><span>Loaded</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="131745292%2FFunctions%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="with-image-loaded.html"><span class="token function">withImageLoaded</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">action<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Function to register listener when the source image is successfully loaded</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1559716995%2FFunctions%2F-1361355514" anchor-label="withImageNotLoaded" id="1559716995%2FFunctions%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="with-image-not-loaded.html"><span>with</span><wbr><span>Image</span><wbr><span>Not</span><wbr><span><span>Loaded</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1559716995%2FFunctions%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="with-image-not-loaded.html"><span class="token function">withImageNotLoaded</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">action<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Function to register listener when the source image is failed to load</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1004347170%2FFunctions%2F-1361355514" anchor-label="withImageSource" id="-1004347170%2FFunctions%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="with-image-source.html"><span>with</span><wbr><span>Image</span><wbr><span><span>Source</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1004347170%2FFunctions%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="with-image-source.html"><span class="token function">withImageSource</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">source<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Function to set the image source to load to <a href="https://developer.android.com/reference/kotlin/android/widget/ImageView.html">ImageView</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1744344421%2FFunctions%2F-1361355514" anchor-label="withPlaceHolder" id="-1744344421%2FFunctions%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="with-place-holder.html"><span>with</span><wbr><span>Place</span><wbr><span><span>Holder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1744344421%2FFunctions%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="with-place-holder.html"><span class="token function">withPlaceHolder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">placeHolder<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Function to register placeHolder image while the image is still loading</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="609744249%2FFunctions%2F-1361355514" anchor-label="withProgressBar" id="609744249%2FFunctions%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="with-progress-bar.html"><span>with</span><wbr><span>Progress</span><wbr><span><span>Bar</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="609744249%2FFunctions%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="with-progress-bar.html"><span class="token function">withProgressBar</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">progressBar<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/widget/ProgressBar.html">ProgressBar</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Function to register <a href="https://developer.android.com/reference/kotlin/android/widget/ProgressBar.html">ProgressBar</a> to listen to loading source image</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-878699138%2FFunctions%2F-1361355514" anchor-label="withTransformation" id="-878699138%2FFunctions%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="with-transformation.html"><span>with</span><wbr><span><span>Transformation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-878699138%2FFunctions%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="with-transformation.html"><span class="token function">withTransformation</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">transformation<span class="token operator">: </span><a href="-image-transformation/index.html">ImageViewLoadConfiguration.ImageTransformation</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Function to set transformation to the image being loaded, e.g <a href="-image-transformation/-fit-center/index.html">ImageTransformation.FitCenter</a> or <a href="-image-transformation/-circle/index.html">ImageTransformation.Circle</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-943947508%2FProperties%2F-1361355514" anchor-label="loadListener" id="-943947508%2FProperties%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="load-listener.html"><span>load</span><wbr><span><span>Listener</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-943947508%2FProperties%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="load-listener.html">loadListener</a><span class="token operator">: </span><span data-unresolved-link="com.bumptech.glide.request/RequestListener///PointingToDeclaration/">RequestListener</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/android/graphics/drawable/Drawable.html">Drawable</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph"><span data-unresolved-link="com.bumptech.glide.request/RequestListener///PointingToDeclaration/">RequestListener</span> to listen the state of image loading, used for displaying and hiding <a href="https://developer.android.com/reference/kotlin/android/widget/ProgressBar.html">ProgressBar</a> and running <a href="on-image-loaded.html">onImageLoaded</a> or <a href="on-image-not-loaded.html">onImageNotLoaded</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1642172845%2FProperties%2F-1361355514" anchor-label="onImageLoaded" id="-1642172845%2FProperties%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-image-loaded.html"><span>on</span><wbr><span>Image</span><wbr><span><span>Loaded</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1642172845%2FProperties%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="on-image-loaded.html">onImageLoaded</a><span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1715488042%2FProperties%2F-1361355514" anchor-label="onImageNotLoaded" id="1715488042%2FProperties%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-image-not-loaded.html"><span>on</span><wbr><span>Image</span><wbr><span>Not</span><wbr><span><span>Loaded</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1715488042%2FProperties%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="on-image-not-loaded.html">onImageNotLoaded</a><span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1143574154%2FProperties%2F-1361355514" anchor-label="options" id="-1143574154%2FProperties%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="options.html"><span><span>options</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1143574154%2FProperties%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="options.html">options</a><span class="token operator">: </span><span data-unresolved-link="com.bumptech.glide.request/RequestOptions///PointingToDeclaration/">RequestOptions</span></div><div class="brief "><p class="paragraph"><span data-unresolved-link="com.bumptech.glide.request/RequestOptions///PointingToDeclaration/">RequestOptions</span> for holding <span data-unresolved-link="com.bumptech.glide/Glide///PointingToDeclaration/">Glide</span> configuration</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2160366%2FProperties%2F-1361355514" anchor-label="progressBar" id="2160366%2FProperties%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="progress-bar.html"><span>progress</span><wbr><span><span>Bar</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2160366%2FProperties%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="progress-bar.html">progressBar</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/widget/ProgressBar.html">ProgressBar</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1445459317%2FProperties%2F-1361355514" anchor-label="source" id="-1445459317%2FProperties%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="source.html"><span><span>source</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1445459317%2FProperties%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="source.html">source</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-55095715%2FProperties%2F-1361355514" anchor-label="transformation" id="-55095715%2FProperties%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="transformation.html"><span><span>transformation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-55095715%2FProperties%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="transformation.html">transformation</a><span class="token operator">: </span><a href="-image-transformation/index.html">ImageViewLoadConfiguration.ImageTransformation</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>Copyright © 2022-2023 jimlyas. All rights reserved.</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>
+

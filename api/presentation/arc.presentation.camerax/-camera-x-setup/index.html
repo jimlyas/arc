@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>CameraXSetup</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script>
+<link href="../../../images/logo-icon.svg"></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>arc</span>            </a>    </div>
+    <div>0.1.1
+    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":modules:presentation:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="Presentation::arc.presentation.camerax/CameraXSetup///PointingToDeclaration//-1361355514">
+  <div class="breadcrumbs"><a href="../../index.html">Presentation</a><span class="delimiter">/</span><a href="../index.html">arc.presentation.camerax</a><span class="delimiter">/</span><span class="current">CameraXSetup</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Camera</span><wbr><span><span>XSetup</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">CameraXSetup</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">view<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/camera/view/PreviewView.html">PreviewView</a><span class="token punctuation">, </span></span><span class="parameter ">lifeCycle<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html">LifecycleOwner</a><span class="token punctuation">, </span></span><span class="parameter ">lensFacing<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div><p class="paragraph"><a href="index.html">CameraXSetup</a> define <a href="https://developer.android.com/reference/kotlin/androidx/camera/core/CameraX.html">CameraX</a> configuration and support manipulate its' functionality like adding and removing <a href="https://developer.android.com/reference/kotlin/androidx/camera/core/UseCase.html">UseCase</a></p><span class="kdoc-tag"><h4 class="">Author</h4><p class="paragraph">jimlyas</p></span><span class="kdoc-tag"><h4 class="">Since</h4><p class="paragraph">03 Oct 2022</p></span><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>life</span><wbr><span><span>Cycle</span></span></u></div></span></div><div><div class="title"><p class="paragraph">the <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html">LifecycleOwner</a> where the <a href="https://developer.android.com/reference/kotlin/androidx/camera/view/PreviewView.html">androidx.camera.view.PreviewView</a> is being inflated</p></div></div></div></div><div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>view</span></span></u></div></span></div><div><div class="title"><p class="paragraph">instance of <a href="https://developer.android.com/reference/kotlin/androidx/camera/view/PreviewView.html">PreviewView</a> from the given page</p></div></div></div></div><div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>lens</span><wbr><span><span>Facing</span></span></u></div></span></div><div><div class="title"><p class="paragraph">Use the Lens Facing back or Front to use for the <a href="https://developer.android.com/reference/kotlin/androidx/camera/core/Camera.html">Camera</a></p></div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,FUNCTION,PROPERTY">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="127474450%2FConstructors%2F-1361355514" anchor-label="CameraXSetup" id="127474450%2FConstructors%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-camera-x-setup.html"><span>Camera</span><wbr><span><span>XSetup</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="127474450%2FConstructors%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">view<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/camera/view/PreviewView.html">PreviewView</a><span class="token punctuation">, </span></span><span class="parameter ">lifeCycle<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleOwner.html">LifecycleOwner</a><span class="token punctuation">, </span></span><span class="parameter ">lensFacing<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="-831341611%2FClasslikes%2F-1361355514" anchor-label="Companion" id="-831341611%2FClasslikes%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-831341611%2FClasslikes%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-374566198%2FFunctions%2F-1361355514" anchor-label="addUseCase" id="-374566198%2FFunctions%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="add-use-case.html"><span>add</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-374566198%2FFunctions%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-use-case.html"><span class="token function">addUseCase</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">useCase<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/camera/core/UseCase.html">UseCase</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Function to add another <a href="https://developer.android.com/reference/kotlin/androidx/camera/core/UseCase.html">UseCase</a> to the list of <a href="https://developer.android.com/reference/kotlin/androidx/camera/core/Camera.html">Camera</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1367478319%2FFunctions%2F-1361355514" anchor-label="removeUseCase" id="1367478319%2FFunctions%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="remove-use-case.html"><span>remove</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1367478319%2FFunctions%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="remove-use-case.html"><span class="token function">removeUseCase</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">useCase<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/camera/core/UseCase.html">UseCase</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Function to remove <a href="https://developer.android.com/reference/kotlin/androidx/camera/core/UseCase.html">UseCase</a> to the list of <a href="https://developer.android.com/reference/kotlin/androidx/camera/core/Camera.html">Camera</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>Copyright © 2022-2023 jimlyas. All rights reserved.</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>
+

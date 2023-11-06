@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>ViewPager2Configuration</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script>
+<link href="../../../images/logo-icon.svg"></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>arc</span>            </a>    </div>
+    <div>0.1.1
+    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":modules:presentation:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="Presentation::arc.presentation.viewpager2/ViewPager2Configuration///PointingToDeclaration//-1361355514">
+  <div class="breadcrumbs"><a href="../../index.html">Presentation</a><span class="delimiter">/</span><a href="../index.html">arc.presentation.viewpager2</a><span class="delimiter">/</span><span class="current">ViewPager2Configuration</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>View</span><wbr><span><span>Pager2Configuration</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">ViewPager2Configuration</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">var </span>activity<span class="token operator">: </span><a href="../../arc.presentation.activity/-arc-activity/index.html">ArcActivity</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>fragment<span class="token operator">: </span><a href="../../arc.presentation.fragment/-arc-fragment/index.html">ArcFragment</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>listFragment<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../arc.presentation.fragment/-arc-fragment/index.html">ArcFragment</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator"> = </span>listOf()<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>tabLayout<span class="token operator">: </span><span data-unresolved-link="com.google.android.material.tabs/TabLayout///PointingToDeclaration/">TabLayout</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>tabLayoutConfiguration<span class="token operator">: </span><a href="../-tab-layout-configuration/index.html">TabLayoutConfiguration</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><span class="kdoc-tag"><h4 class="">Author</h4><p class="paragraph">jimlyas</p></span><span class="kdoc-tag"><h4 class="">Since</h4><p class="paragraph">13 Jan 2023</p></span><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>activity</span></span></u></div></span></div><div><div class="title"><p class="paragraph"><a href="../../arc.presentation.activity/-arc-activity/index.html">ArcActivity</a> where the <a href="https://developer.android.com/reference/kotlin/androidx/viewpager2/widget/ViewPager2.html">androidx.viewpager2.widget.ViewPager2</a> is inflated</p></div></div></div></div><div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>fragment</span></span></u></div></span></div><div><div class="title"><p class="paragraph"><a href="../../arc.presentation.fragment/-arc-fragment/index.html">ArcFragment</a> where the <a href="https://developer.android.com/reference/kotlin/androidx/viewpager2/widget/ViewPager2.html">androidx.viewpager2.widget.ViewPager2</a> is inflated</p></div></div></div></div><div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>list</span><wbr><span><span>Fragment</span></span></u></div></span></div><div><div class="title"><p class="paragraph">list of <a href="../../arc.presentation.fragment/-arc-fragment/index.html">ArcFragment</a> to include inside the <a href="https://developer.android.com/reference/kotlin/androidx/viewpager2/widget/ViewPager2.html">androidx.viewpager2.widget.ViewPager2</a></p></div></div></div></div><div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>tab</span><wbr><span><span>Layout</span></span></u></div></span></div><div><div class="title"><p class="paragraph"><span data-unresolved-link="com.google.android.material.tabs/TabLayout///PointingToDeclaration/">TabLayout</span> to linked with the <a href="https://developer.android.com/reference/kotlin/androidx/viewpager2/widget/ViewPager2.html">androidx.viewpager2.widget.ViewPager2</a></p></div></div></div></div><div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>tab</span><wbr><span>Layout</span><wbr><span><span>Configuration</span></span></u></div></span></div><div><div class="title"><p class="paragraph">configuration for the <span data-unresolved-link="com.google.android.material.tabs/TabLayout///PointingToDeclaration/">TabLayout</span></p><p class="paragraph">Copyright © 2022-2023 jimlyas. All rights reserved.</p></div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,FUNCTION,PROPERTY">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="-844205471%2FConstructors%2F-1361355514" anchor-label="ViewPager2Configuration" id="-844205471%2FConstructors%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-view-pager2-configuration.html"><span>View</span><wbr><span><span>Pager2Configuration</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-844205471%2FConstructors%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">activity<span class="token operator">: </span><a href="../../arc.presentation.activity/-arc-activity/index.html">ArcActivity</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">fragment<span class="token operator">: </span><a href="../../arc.presentation.fragment/-arc-fragment/index.html">ArcFragment</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">listFragment<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../arc.presentation.fragment/-arc-fragment/index.html">ArcFragment</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator"> = </span>listOf()<span class="token punctuation">, </span></span><span class="parameter ">tabLayout<span class="token operator">: </span><span data-unresolved-link="com.google.android.material.tabs/TabLayout///PointingToDeclaration/">TabLayout</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">tabLayoutConfiguration<span class="token operator">: </span><a href="../-tab-layout-configuration/index.html">TabLayoutConfiguration</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="2036530262%2FFunctions%2F-1361355514" anchor-label="bindWithTabLayout" id="2036530262%2FFunctions%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="bind-with-tab-layout.html"><span>bind</span><wbr><span>With</span><wbr><span>Tab</span><wbr><span><span>Layout</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2036530262%2FFunctions%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="bind-with-tab-layout.html"><span class="token function">bindWithTabLayout</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">tabLayout<span class="token operator">: </span><span data-unresolved-link="com.google.android.material.tabs/TabLayout///PointingToDeclaration/">TabLayout</span><span class="token punctuation">, </span></span><span class="parameter ">configuration<span class="token operator">: </span><a href="../index.html#1276376115%2FClasslikes%2F-1361355514">TabLayoutDeclaration</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ViewPager2Configuration</a></div><div class="brief "><p class="paragraph">Function to bind <span data-unresolved-link="com.google.android.material.tabs/TabLayout///PointingToDeclaration/">TabLayout</span> with the <a href="https://developer.android.com/reference/kotlin/androidx/viewpager2/widget/ViewPager2.html">androidx.viewpager2.widget.ViewPager2</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1855423612%2FFunctions%2F-1361355514" anchor-label="withActivity" id="-1855423612%2FFunctions%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="with-activity.html"><span>with</span><wbr><span><span>Activity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1855423612%2FFunctions%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="with-activity.html"><span class="token function">withActivity</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">activity<span class="token operator">: </span><a href="../../arc.presentation.activity/-arc-activity/index.html">ArcActivity</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ViewPager2Configuration</a></div><div class="brief "><p class="paragraph">Function to define <a href="../../arc.presentation.activity/-arc-activity/index.html">ArcActivity</a> that inflated the <a href="https://developer.android.com/reference/kotlin/androidx/viewpager2/widget/ViewPager2.html">androidx.viewpager2.widget.ViewPager2</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2129847013%2FFunctions%2F-1361355514" anchor-label="withFragment" id="2129847013%2FFunctions%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="with-fragment.html"><span>with</span><wbr><span><span>Fragment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2129847013%2FFunctions%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="with-fragment.html"><span class="token function">withFragment</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">fragment<span class="token operator">: </span><a href="../../arc.presentation.fragment/-arc-fragment/index.html">ArcFragment</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ViewPager2Configuration</a></div><div class="brief "><p class="paragraph">Function to define <a href="../../arc.presentation.fragment/-arc-fragment/index.html">ArcFragment</a> that inflated the <a href="https://developer.android.com/reference/kotlin/androidx/viewpager2/widget/ViewPager2.html">androidx.viewpager2.widget.ViewPager2</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-26439403%2FFunctions%2F-1361355514" anchor-label="withListFragment" id="-26439403%2FFunctions%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="with-list-fragment.html"><span>with</span><wbr><span>List</span><wbr><span><span>Fragment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-26439403%2FFunctions%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="with-list-fragment.html"><span class="token function">withListFragment</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listFragment<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../arc.presentation.fragment/-arc-fragment/index.html">ArcFragment</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ViewPager2Configuration</a></div><div class="brief "><p class="paragraph">Function to define the list of fragments to include inside the ViewPager</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="1146567998%2FProperties%2F-1361355514" anchor-label="activity" id="1146567998%2FProperties%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="activity.html"><span><span>activity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1146567998%2FProperties%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="activity.html">activity</a><span class="token operator">: </span><a href="../../arc.presentation.activity/-arc-activity/index.html">ArcActivity</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1920382691%2FProperties%2F-1361355514" anchor-label="fragment" id="-1920382691%2FProperties%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="fragment.html"><span><span>fragment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1920382691%2FProperties%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="fragment.html">fragment</a><span class="token operator">: </span><a href="../../arc.presentation.fragment/-arc-fragment/index.html">ArcFragment</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-741225441%2FProperties%2F-1361355514" anchor-label="listFragment" id="-741225441%2FProperties%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="list-fragment.html"><span>list</span><wbr><span><span>Fragment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-741225441%2FProperties%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="list-fragment.html">listFragment</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../arc.presentation.fragment/-arc-fragment/index.html">ArcFragment</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="791189966%2FProperties%2F-1361355514" anchor-label="tabLayout" id="791189966%2FProperties%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="tab-layout.html"><span>tab</span><wbr><span><span>Layout</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="791189966%2FProperties%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="tab-layout.html">tabLayout</a><span class="token operator">: </span><span data-unresolved-link="com.google.android.material.tabs/TabLayout///PointingToDeclaration/">TabLayout</span><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1750739254%2FProperties%2F-1361355514" anchor-label="tabLayoutConfiguration" id="1750739254%2FProperties%2F-1361355514" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":modules:presentation:dokkaHtmlPartial/release" data-filterable-set=":modules:presentation:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="tab-layout-configuration.html"><span>tab</span><wbr><span>Layout</span><wbr><span><span>Configuration</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1750739254%2FProperties%2F-1361355514"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":modules:presentation:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="tab-layout-configuration.html">tabLayoutConfiguration</a><span class="token operator">: </span><a href="../-tab-layout-configuration/index.html">TabLayoutConfiguration</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>Copyright © 2022-2023 jimlyas. All rights reserved.</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>
+
