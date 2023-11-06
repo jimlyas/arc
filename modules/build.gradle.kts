@@ -16,7 +16,7 @@ group = "io.github.jimlyas"
 version = "0.1.0"
 
 tasks.withType<DokkaMultiModuleTask>().configureEach {
-    moduleName.set("ARC")
+    moduleName.set(rootProject.name)
     outputDirectory.set(file("$rootDir/docs/src/api"))
     pluginsMapConfiguration.set(
         mapOf(
@@ -37,9 +37,9 @@ publishing {
 }
 
 configure<MavenPublishBaseExtension> {
-    coordinates(project.group.toString(), "ARC", project.version.toString())
+    coordinates(project.group.toString(), rootProject.name, project.version.toString())
     pom {
-        name.set("ARC")
+        name.set(rootProject.name)
         description.set("Arc Java Platform for managing modules version")
     }
 }
