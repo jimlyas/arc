@@ -8,7 +8,7 @@ import arc.utilities.context.GlobalContext.context
  *
  * Static object as Singleton to contain current application's [Context]
  * @author jimlyas
- * @since 25 Jan 2023
+ * @since 0.1.0
  * @property context [Context] of current application
  *
  * Copyright © 2022-2023 jimlyas. All rights reserved.

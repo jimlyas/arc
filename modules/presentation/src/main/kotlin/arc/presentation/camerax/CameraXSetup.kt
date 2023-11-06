@@ -29,7 +29,7 @@ import kotlin.math.min
 /**
  * [CameraXSetup] define [CameraX] configuration and support manipulate its' functionality like adding and removing [UseCase]
  * @author jimlyas
- * @since 03 Oct 2022
+ * @since 0.1.0
  * @param lifeCycle the [LifecycleOwner] where the [androidx.camera.view.PreviewView] is being inflated
  * @param view instance of [PreviewView] from the given page
  * @param lensFacing Use the Lens Facing back or Front to use for the [Camera]

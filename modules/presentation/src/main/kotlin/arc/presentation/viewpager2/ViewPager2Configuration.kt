@@ -6,7 +6,7 @@ import com.google.android.material.tabs.TabLayout
 
 /**
  * @author jimlyas
- * @since 13 Jan 2023
+ * @since 0.1.0
  * @param activity [ArcActivity] where the [androidx.viewpager2.widget.ViewPager2] is inflated
  * @param fragment [ArcFragment] where the [androidx.viewpager2.widget.ViewPager2] is inflated
  * @param listFragment list of [ArcFragment] to include inside the [androidx.viewpager2.widget.ViewPager2]

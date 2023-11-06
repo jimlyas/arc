@@ -5,7 +5,7 @@ import timber.log.Timber
 /**
  * [LoggingUtilities] [Timber] logging implementation
  * @author jimlyas
- * @since 28 Jan 2023
+ * @since 0.1.0
  *
  * Copyright © 2022-2023 jimlyas. All rights reserved.
  */

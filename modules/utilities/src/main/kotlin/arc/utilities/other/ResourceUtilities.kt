@@ -10,7 +10,7 @@ import arc.utilities.context.GlobalContext
 /**
  * [ResourceUtilities] is utilities class for returning Resources like [String] and [Drawable]
  * @author jimlyas
- * @since 25 Jan 2023
+ * @since 0.1.0
  * Copyright © 2022-2023 jimlyas. All rights reserved.
  */
 object ResourceUtilities {

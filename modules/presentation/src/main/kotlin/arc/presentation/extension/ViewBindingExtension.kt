@@ -10,7 +10,7 @@ import java.lang.reflect.ParameterizedType
 
 /**
  * @author jimlyas
- * @since 16 Sep 2022
+ * @since 0.1.0
  *
  * Copyright © 2022-2023 jimlyas. All rights reserved.
  */

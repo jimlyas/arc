@@ -5,7 +5,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 /**
  * @author jimlyas
- * @since 13 Jan 2023
+ * @since 0.1.0
  * Function to configure [ViewPager2]
  * @param configuration configuration for the [ViewPager2]
  * @receiver [ViewPager2]

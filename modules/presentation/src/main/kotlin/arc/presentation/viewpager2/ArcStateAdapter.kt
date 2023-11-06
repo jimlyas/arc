@@ -8,7 +8,7 @@ import arc.presentation.fragment.ArcFragment
 /**
  * [ArcStateAdapter] an adapter for configuring [androidx.viewpager2.widget.ViewPager2]
  * @author jimlyas
- * @since 13 Jan 2023
+ * @since 0.1.0
  * @param manager [FragmentManager] to inflate the [ArcFragment]
  * @param lifeCycle bind the [androidx.viewpager2.widget.ViewPager2] to the [Lifecycle]
  * @param listFragment [List] of [ArcFragment] to inflate into the [androidx.viewpager2.widget.ViewPager2]

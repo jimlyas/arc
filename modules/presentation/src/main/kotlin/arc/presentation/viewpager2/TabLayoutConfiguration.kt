@@ -4,7 +4,7 @@ import android.graphics.drawable.Drawable
 
 /**
  * @author jimlyas
- * @since 13 Jan 2023
+ * @since 0.1.0
  * @param listTitle [List] of [String] used as [com.google.android.material.tabs.TabLayout]'s title
  * @param listIcon [List] of [Drawable] used as [com.google.android.material.tabs.TabLayout]'s icon
  *

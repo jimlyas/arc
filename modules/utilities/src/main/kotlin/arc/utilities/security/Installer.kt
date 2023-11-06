@@ -6,7 +6,7 @@ import kotlin.annotation.AnnotationRetention.SOURCE
 /**
  * [Installer] annotation class to define all verified app installer
  * @author jimlyas
- * @since 07 Feb 2023
+ * @since 0.1.0
  *
  * Copyright © 2022-2023 jimlyas. All rights reserved.
  */

@@ -27,7 +27,7 @@ import java.io.Serializable
  * [ArcActivity] define base class for [Activity] for project
  *
  * @author jimlyas
- * @since 16 Sep 2022
+ * 0.1.0 16 Sep 2022
  * @param viewBinding [ViewBinding] class to be implemented for this class
  * @param hostId Resource Id of [androidx.fragment.app.FragmentContainerView] inside the [Activity]
  * @property binding instance of [viewBinding] that have been inflated. Use [binding] for referencing your [android.view.View]

@@ -15,7 +15,7 @@ import arc.utilities.context.GlobalContext
 /**
  * [ArcBroadcastReceiver] abstract [BroadcastReceiver] functionality
  * @author jimlyas
- * @since 16 Jan 2023
+ * @since 0.1.0
  * @property ctx [android.content.Context] to register and unregister current [ArcBroadcastReceiver]
  *
  * Copyright © 2022-2023 jimlyas. All rights reserved.

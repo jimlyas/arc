@@ -13,7 +13,7 @@ import kotlin.Float.Companion.MIN_VALUE
 /**
  * [SharedPreferenceManager] is [android.content.SharedPreferences] class within Arc
  * @author jimlyas
- * @since 06 Nov 2023
+ * @since 0.1.0
  * @param context [Context] used to create the instance of [android.content.SharedPreferences]
  * @param preferenceName [String] name for the [android.content.SharedPreferences]
  * @param encrypted [Boolean] to define does the [android.content.SharedPreferences] is encrypted or not,

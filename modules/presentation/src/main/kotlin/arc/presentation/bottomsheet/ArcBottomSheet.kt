@@ -10,7 +10,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 /**
  * [ArcBottomSheet] Base class for BottomSheet. Use [BottomSheetDialogFragment]
  * @author jimlyas
- * @since 13 Jan 2023
+ * @since 0.1.0
  * @param viewBinding [ViewBinding] define which layout to inflate for this [ArcBottomSheet]
  * @param isDialogCancelable Does the [ArcBottomSheet] cancelable of not?
  * @property binding instance of [viewBinding] that can be use to manipulate the [android.view.View] components

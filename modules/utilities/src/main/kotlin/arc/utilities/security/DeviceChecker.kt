@@ -13,7 +13,7 @@ import kotlin.annotation.AnnotationRetention.SOURCE
 /**
  * [DeviceChecker] [Object] to validate tampered device
  * @author jimlyas
- * @since 07 Feb 2023
+ * @since 0.1.0
  * @property EMULATOR indicate that the device is an emulator
  * @property ROOTED indicate that the device is rooted
  * @property SAFE indicate that the device is safe

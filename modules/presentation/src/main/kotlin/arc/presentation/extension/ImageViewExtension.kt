@@ -17,7 +17,7 @@ import com.bumptech.glide.request.target.Target
  * [ImageViewLoadConfiguration] define setup and configuration to load an image into [ImageView] using [Glide]
  *
  * @author jimlyas
- * @since 13 Jan 2023
+ * @since 0.1.0
  * @param source the image source that will be loaded into [ImageView], supported type is [Int], [String], and [Drawable]
  * @param transformation [ImageTransformation] to define how the size of the image will be displayed by the ratio of [ImageView]
  * @param progressBar [ProgressBar] that will be listen when the image is loaded, will be displayed

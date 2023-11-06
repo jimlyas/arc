@@ -14,7 +14,7 @@ import arc.data.source.local.db.model.DbEntity
  * For reading data purposes, please implement your own inside your DAO after inherit [ArcDao]
  *
  * @author jimlyas
- * @since 08 Feb 2023
+ * @since 0.1.0
  * @param entity [Object] that inherit [DbEntity] that will be manipulated using this DAO
  *
  * Copyright © 2022-2023 jimlyas. All rights reserved.

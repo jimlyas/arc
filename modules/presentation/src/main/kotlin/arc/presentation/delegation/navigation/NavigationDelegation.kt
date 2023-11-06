@@ -8,7 +8,7 @@ import androidx.navigation.NavOptions
 /**
  * [NavigationDelegation] control how the Navigation will be implemented using delegation
  * @author jimlyas
- * @since 18 Sep 2022
+ * @since 0.1.0
  * @property nav [NavController] that will being used to navigate through the Fragments
  * Copyright © 2022-2023 jimlyas. All rights reserved.
  */
