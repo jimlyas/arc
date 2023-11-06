@@ -14,45 +14,45 @@ import androidx.navigation.NavOptions
  */
 class NavigationDelegation : NavigationDelegate {
 
-    private lateinit var nav: NavController
+	private lateinit var nav: NavController
 
-    private var errorHandler: ((Exception) -> Unit)? = null
+	private var errorHandler: ((Exception) -> Unit)? = null
 
-    override fun setNavController(controller: NavController) {
-        nav = controller
-    }
+	override fun setNavController(controller: NavController) {
+		nav = controller
+	}
 
-    override fun navigateTo(navId: Int, args: Bundle?, options: NavOptions?) {
-        runNavigationSafely { nav.navigate(navId, args, options) }
-    }
+	override fun navigateTo(navId: Int, args: Bundle?, options: NavOptions?) {
+		runNavigationSafely { nav.navigate(navId, args, options) }
+	}
 
-    override fun navigateTo(link: Uri, options: NavOptions?) {
-        runNavigationSafely { nav.navigate(link, options, null) }
-    }
+	override fun navigateTo(link: Uri, options: NavOptions?) {
+		runNavigationSafely { nav.navigate(link, options, null) }
+	}
 
-    /**
-     * Function to set [errorHandler] value
-     * @param action how the [Exception] will be handled when occurred
-     */
-    fun setNavigationException(action: (Exception) -> Unit) {
-        errorHandler = action
-    }
+	/**
+	 * Function to set [errorHandler] value
+	 * @param action how the [Exception] will be handled when occurred
+	 */
+	fun setNavigationException(action: (Exception) -> Unit) {
+		errorHandler = action
+	}
 
-    /**
-     * Function to run navigation action safely without throwing un-catch exception, set the
-     * error handler by calling [NavigationDelegation.setNavigationException]
-     * @param navigationAction navigation action that will be run
-     * @exception [IllegalStateException]
-     * @exception [IllegalArgumentException]
-     * @see [NavigationDelegation.setNavigationException]
-     */
-    private fun runNavigationSafely(navigationAction: () -> Unit) {
-        try {
-            navigationAction()
-        } catch (stateException: IllegalStateException) {
-            errorHandler?.invoke(stateException)
-        } catch (argumentException: IllegalArgumentException) {
-            errorHandler?.invoke(argumentException)
-        }
-    }
+	/**
+	 * Function to run navigation action safely without throwing un-catch exception, set the
+	 * error handler by calling [NavigationDelegation.setNavigationException]
+	 * @param navigationAction navigation action that will be run
+	 * @exception [IllegalStateException]
+	 * @exception [IllegalArgumentException]
+	 * @see [NavigationDelegation.setNavigationException]
+	 */
+	private fun runNavigationSafely(navigationAction: () -> Unit) {
+		try {
+			navigationAction()
+		} catch (stateException: IllegalStateException) {
+			errorHandler?.invoke(stateException)
+		} catch (argumentException: IllegalArgumentException) {
+			errorHandler?.invoke(argumentException)
+		}
+	}
 }

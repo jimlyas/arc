@@ -29,107 +29,107 @@ import arc.presentation.extension.ViewBindingExtension.inflateViewBinding
  * Copyright © 2022-2023 jimlyas. All rights reserved.
  */
 abstract class ArcFragment<viewBinding : ViewBinding> : Fragment(),
-    NavigationDelegate by NavigationDelegation() {
+	NavigationDelegate by NavigationDelegation() {
 
-    protected val binding by lazy { inflateViewBinding() }
+	protected val binding by lazy { inflateViewBinding() }
 
-    protected lateinit var currentActivity: ArcActivity<*>
+	protected lateinit var currentActivity: ArcActivity<*>
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ) = binding.root
+	override fun onCreateView(
+		inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+	) = binding.root
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        currentActivity = when (context) {
-            is ArcActivity<*> -> context
-            else -> (parentFragment as ArcFragment<*>).currentActivity
-        }
-        currentActivity.navController?.let { this.setNavController(findNavController()) }
-    }
+	override fun onAttach(context: Context) {
+		super.onAttach(context)
+		currentActivity = when (context) {
+			is ArcActivity<*> -> context
+			else -> (parentFragment as ArcFragment<*>).currentActivity
+		}
+		currentActivity.navController?.let { this.setNavController(findNavController()) }
+	}
 
-    /**
-     * Function to pick image from gallery
-     * @param action action to do when an image is selected
-     */
-    fun pickImageFromGallery(action: (Uri) -> Unit) {
-        currentActivity.pickImageFromGallery(action)
-    }
+	/**
+	 * Function to pick image from gallery
+	 * @param action action to do when an image is selected
+	 */
+	fun pickImageFromGallery(action: (Uri) -> Unit) {
+		currentActivity.pickImageFromGallery(action)
+	}
 
-    /**
-     * Function to request permission to user
-     * @param permissions list of permissions to request
-     * @param onPermissionGranted action to do when permission granted
-     * @param onPermissionNotGranted action to do when permission not granted
-     */
-    @TargetApi(M)
-    fun requestPermissionsSafely(
-        permissions: Array<String>,
-        onPermissionGranted: (() -> Unit)? = null,
-        onPermissionNotGranted: (() -> Unit)? = null
-    ) {
-        currentActivity.requestPermissionsSafely(
-            permissions,
-            onPermissionGranted,
-            onPermissionNotGranted
-        )
-    }
+	/**
+	 * Function to request permission to user
+	 * @param permissions list of permissions to request
+	 * @param onPermissionGranted action to do when permission granted
+	 * @param onPermissionNotGranted action to do when permission not granted
+	 */
+	@TargetApi(M)
+	fun requestPermissionsSafely(
+		permissions: Array<String>,
+		onPermissionGranted: (() -> Unit)? = null,
+		onPermissionNotGranted: (() -> Unit)? = null
+	) {
+		currentActivity.requestPermissionsSafely(
+			permissions,
+			onPermissionGranted,
+			onPermissionNotGranted
+		)
+	}
 
-    /**
-     * Function to check if application has permission
-     * @param permission name of the permission to check
-     * @return is the application has the permission?
-     */
-    @TargetApi(M)
-    fun checkPermission(permission: String) =
-        SDK_INT < M || currentActivity.checkSelfPermission(permission) == PERMISSION_GRANTED
+	/**
+	 * Function to check if application has permission
+	 * @param permission name of the permission to check
+	 * @return is the application has the permission?
+	 */
+	@TargetApi(M)
+	fun checkPermission(permission: String) =
+		SDK_INT < M || currentActivity.checkSelfPermission(permission) == PERMISSION_GRANTED
 
-    /**
-     * Function to check if the application has permissions
-     * @param permissions array of the permission to check
-     * @return is the application has the permissions?
-     */
-    @TargetApi(M)
-    fun checkPermissions(permissions: List<String>) = currentActivity.checkPermissions(permissions)
+	/**
+	 * Function to check if the application has permissions
+	 * @param permissions array of the permission to check
+	 * @return is the application has the permissions?
+	 */
+	@TargetApi(M)
+	fun checkPermissions(permissions: List<String>) = currentActivity.checkPermissions(permissions)
 
-    /**
-     * Function to check permission to the user
-     * @param permissions [List] of [String] permission to ask the user
-     * @param onPermissionGranted action to run when all the permissions is granted
-     * @param onPermissionNotGranted action to run when all or one of the permissions is not granted
-     */
-    fun checkPermissions(
-        permissions: List<String>,
-        onPermissionGranted: (() -> Unit),
-        onPermissionNotGranted: (() -> Unit)
-    ) {
-        currentActivity.checkPermissions(
-            permissions, onPermissionGranted, onPermissionNotGranted
-        )
-    }
+	/**
+	 * Function to check permission to the user
+	 * @param permissions [List] of [String] permission to ask the user
+	 * @param onPermissionGranted action to run when all the permissions is granted
+	 * @param onPermissionNotGranted action to run when all or one of the permissions is not granted
+	 */
+	fun checkPermissions(
+		permissions: List<String>,
+		onPermissionGranted: (() -> Unit),
+		onPermissionNotGranted: (() -> Unit)
+	) {
+		currentActivity.checkPermissions(
+			permissions, onPermissionGranted, onPermissionNotGranted
+		)
+	}
 
-    /**
-     * Function to finish the [ArcActivity] that current [ArcFragment] is attached to
-     */
-    fun finishActivity() {
-        currentActivity.finish()
-    }
+	/**
+	 * Function to finish the [ArcActivity] that current [ArcFragment] is attached to
+	 */
+	fun finishActivity() {
+		currentActivity.finish()
+	}
 
-    /**
-     * Function to set [ArcActivity]'s [Toolbar] from [ArcFragment]
-     * @param toolbar [Toolbar] that defined in XML layout, nullable
-     * @param title Title for [Toolbar], nullable
-     * @param isChild Display back button it toolbar?
-     * @param menu menu Id, nullable if not needed
-     * @param onMenuListener listener when item of the menu selected, nullable if not needed
-     */
-    fun setupToolbar(
-        toolbar: Toolbar?,
-        title: String?,
-        isChild: Boolean,
-        menu: Int?,
-        onMenuListener: ((Int) -> Boolean)?
-    ) {
-        currentActivity.setupToolbar(toolbar, title, isChild, menu, onMenuListener)
-    }
+	/**
+	 * Function to set [ArcActivity]'s [Toolbar] from [ArcFragment]
+	 * @param toolbar [Toolbar] that defined in XML layout, nullable
+	 * @param title Title for [Toolbar], nullable
+	 * @param isChild Display back button it toolbar?
+	 * @param menu menu Id, nullable if not needed
+	 * @param onMenuListener listener when item of the menu selected, nullable if not needed
+	 */
+	fun setupToolbar(
+		toolbar: Toolbar?,
+		title: String?,
+		isChild: Boolean,
+		menu: Int?,
+		onMenuListener: ((Int) -> Boolean)?
+	) {
+		currentActivity.setupToolbar(toolbar, title, isChild, menu, onMenuListener)
+	}
 }

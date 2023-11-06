@@ -16,15 +16,15 @@ import java.io.File
  */
 object FileUtilities {
 
-    /**
-     * Function to compress [File] image size
-     * @param toCompress [File] to compress
-     * @param format [Bitmap.CompressFormat] configuration for the compression
-     * @return compressed [File]
-     */
-    suspend fun compressImage(toCompress: File, format: Bitmap.CompressFormat? = null) =
-        Compressor.compress(GlobalContext.get(), toCompress) {
-            format(format ?: Bitmap.CompressFormat.JPEG)
-            size(1024)
-        }
+	/**
+	 * Function to compress [File] image size
+	 * @param toCompress [File] to compress
+	 * @param format [Bitmap.CompressFormat] configuration for the compression
+	 * @return compressed [File]
+	 */
+	suspend fun compressImage(toCompress: File, format: Bitmap.CompressFormat? = null) =
+		Compressor.compress(GlobalContext.get(), toCompress) {
+			format(format ?: Bitmap.CompressFormat.JPEG)
+			size(1024)
+		}
 }

@@ -1,3 +1,5 @@
+import org.gradle.api.JavaVersion.VERSION_1_8
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -41,8 +43,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = VERSION_1_8
+        targetCompatibility = VERSION_1_8
     }
     buildFeatures.viewBinding = true
     kotlinOptions.jvmTarget = "1.8"
@@ -50,9 +52,12 @@ android {
 
 dependencies {
     // ARC modules
-    implementation(projects.modules.data)
-    implementation(projects.modules.presentation)
-    implementation(projects.modules.utilities)
+//    implementation(projects.modules.data)
+//    implementation(projects.modules.presentation)
+//    implementation(projects.modules.utilities)
+    implementation("io.github.jimlyas:ARC-presentation:0.1.2")
+    implementation("io.github.jimlyas:ARC-data:0.1.2")
+    implementation("io.github.jimlyas:ARC-utilities:0.1.2")
 
     implementation(libs.ktx)
     implementation(libs.compat)

@@ -22,8 +22,8 @@ import arc.presentation.fragment.ArcFragment
  * @return instance of [CameraXSetup]
  */
 fun ArcActivity<*>.setupCameraX(
-    view: PreviewView,
-    @LensFacing lensFacing: Int = LENS_FACING_BACK
+	view: PreviewView,
+	@LensFacing lensFacing: Int = LENS_FACING_BACK
 ) = CameraXSetup(view, this, lensFacing)
 
 /**
@@ -34,6 +34,6 @@ fun ArcActivity<*>.setupCameraX(
  * @return instance of [CameraXSetup]
  */
 fun ArcFragment<*>.setupCameraX(
-    view: PreviewView,
-    @LensFacing lensFacing: Int = LENS_FACING_BACK
+	view: PreviewView,
+	@LensFacing lensFacing: Int = LENS_FACING_BACK
 ) = CameraXSetup(view, this, lensFacing)

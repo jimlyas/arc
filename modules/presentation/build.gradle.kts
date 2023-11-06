@@ -1,16 +1,16 @@
 dependencies {
-    implementation(libs.ktx)
-    implementation(libs.compat)
-    implementation(libs.material)
+	implementation(libs.ktx)
+	implementation(libs.compat)
+	implementation(libs.material)
 
-    api(libs.bundles.navigation)
+	api(libs.bundles.navigation)
 
-    api(libs.paging.runtime)
+	api(libs.paging.runtime)
 
-    api(libs.bundles.camerax)
+	api(libs.bundles.camerax)
 
-    api("com.github.bumptech.glide:glide:4.13.2")
+	api("com.github.bumptech.glide:glide:4.13.2")
 
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.bundles.android.test)
+	testImplementation(libs.junit)
+	androidTestImplementation(libs.bundles.android.test)
 }

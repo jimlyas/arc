@@ -12,31 +12,33 @@ import com.google.android.material.tabs.TabLayoutMediator
  * Copyright © 2022-2023 jimlyas. All rights reserved.
  */
 fun ViewPager2.configure(configuration: ViewPagerDeclaration) {
-    val config = ViewPager2Configuration().apply(configuration)
-    this.adapter = when {
-        config.fragment != null -> {
-            ArcStateAdapter(
-                config.fragment!!.childFragmentManager,
-                config.fragment!!.lifecycle,
-                config.listFragment
-            )
-        }
-        config.activity != null -> {
-            ArcStateAdapter(
-                config.activity!!.supportFragmentManager,
-                config.activity!!.lifecycle,
-                config.listFragment
-            )
-        }
-        else -> null
-    }
+	val config = ViewPager2Configuration().apply(configuration)
+	this.adapter = when {
+		config.fragment != null -> {
+			ArcStateAdapter(
+				config.fragment!!.childFragmentManager,
+				config.fragment!!.lifecycle,
+				config.listFragment
+			)
+		}
 
-    config.tabLayout?.let { tab ->
-        TabLayoutMediator(tab, this) { currentTab, position ->
-            currentTab.text = config.tabLayoutConfiguration?.listTitle?.get(position)
-            currentTab.icon = config.tabLayoutConfiguration?.listIcon?.get(position)
-        }.attach()
-    }
+		config.activity != null -> {
+			ArcStateAdapter(
+				config.activity!!.supportFragmentManager,
+				config.activity!!.lifecycle,
+				config.listFragment
+			)
+		}
+
+		else -> null
+	}
+
+	config.tabLayout?.let { tab ->
+		TabLayoutMediator(tab, this) { currentTab, position ->
+			currentTab.text = config.tabLayoutConfiguration?.listTitle?.get(position)
+			currentTab.icon = config.tabLayoutConfiguration?.listIcon?.get(position)
+		}.attach()
+	}
 }
 
 

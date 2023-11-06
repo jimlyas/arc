@@ -21,24 +21,24 @@ import arc.data.source.local.db.model.DbEntity
  */
 interface ArcDao<entity : DbEntity> : DbService {
 
-    /**
-     * Function to store [entity] to the database
-     * @param data instance of [entity] to be saved
-     */
-    @Insert(onConflict = REPLACE)
-    fun insert(data: entity)
+	/**
+	 * Function to store [entity] to the database
+	 * @param data instance of [entity] to be saved
+	 */
+	@Insert(onConflict = REPLACE)
+	fun insert(data: entity)
 
-    /**
-     * Function to update [entity] value inside the database
-     * @param data instance of [entity] to be updated
-     */
-    @Update
-    fun update(vararg data: entity)
+	/**
+	 * Function to update [entity] value inside the database
+	 * @param data instance of [entity] to be updated
+	 */
+	@Update
+	fun update(vararg data: entity)
 
-    /**
-     * Function to remove an [entity] from the database
-     * @param data instance of [entity] to be removed
-     */
-    @Delete
-    fun remove(vararg data: entity)
+	/**
+	 * Function to remove an [entity] from the database
+	 * @param data instance of [entity] to be removed
+	 */
+	@Delete
+	fun remove(vararg data: entity)
 }

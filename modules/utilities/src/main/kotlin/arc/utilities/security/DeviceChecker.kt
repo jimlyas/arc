@@ -21,34 +21,34 @@ import kotlin.annotation.AnnotationRetention.SOURCE
  * Copyright © 2022-2023 jimlyas. All rights reserved.
  */
 object DeviceChecker {
-    const val EMULATOR = 0
-    const val ROOTED = 2
-    const val SAFE = 1
+	const val EMULATOR = 0
+	const val ROOTED = 2
+	const val SAFE = 1
 
-    @IntDef(EMULATOR, ROOTED, SAFE)
-    @Retention(SOURCE)
-    annotation class SecurityCheck
+	@IntDef(EMULATOR, ROOTED, SAFE)
+	@Retention(SOURCE)
+	annotation class SecurityCheck
 
-    /**
-     * Function to check does the device is an emulator
-     * @param ctx [Context] to check current device condition and configuration
-     * @return [Boolean] Does the device is an emulator or not?
-     */
-    fun isDeviceEmulator(ctx: Context): Boolean {
-        var result = true
-        EmulatorDetector.with(ctx).apply {
-            isCheckTelephony = true
-            addPackageName("com.bluestacks")
-            isDebug = ctx.isDebuggable
-            detect { result = it }
-        }
-        return result
-    }
+	/**
+	 * Function to check does the device is an emulator
+	 * @param ctx [Context] to check current device condition and configuration
+	 * @return [Boolean] Does the device is an emulator or not?
+	 */
+	fun isDeviceEmulator(ctx: Context): Boolean {
+		var result = true
+		EmulatorDetector.with(ctx).apply {
+			isCheckTelephony = true
+			addPackageName("com.bluestacks")
+			isDebug = ctx.isDebuggable
+			detect { result = it }
+		}
+		return result
+	}
 
-    /**
-     * Function to check does the device is rooted
-     * @param ctx [Context] to check current device condition and configuration
-     * @return [Boolean] Does the device is rooted or not?
-     */
-    fun isDeviceRooted(ctx: Context) = RootBeer(ctx).isRooted
+	/**
+	 * Function to check does the device is rooted
+	 * @param ctx [Context] to check current device condition and configuration
+	 * @return [Boolean] Does the device is rooted or not?
+	 */
+	fun isDeviceRooted(ctx: Context) = RootBeer(ctx).isRooted
 }

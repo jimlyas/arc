@@ -13,63 +13,63 @@ import android.widget.EditText
  */
 object ViewExtension {
 
-    /**
-     * Function to display [View]
-     * @receiver [View]
-     */
-    fun View.visible() {
-        visibility = View.VISIBLE
-    }
+	/**
+	 * Function to display [View]
+	 * @receiver [View]
+	 */
+	fun View.visible() {
+		visibility = View.VISIBLE
+	}
 
-    /**
-     * Function to hide [View]
-     * @receiver [View]
-     */
-    fun View.invisible() {
-        visibility = View.INVISIBLE
-    }
+	/**
+	 * Function to hide [View]
+	 * @receiver [View]
+	 */
+	fun View.invisible() {
+		visibility = View.INVISIBLE
+	}
 
-    /**
-     * Function to remove [View]
-     * @receiver [View]
-     */
-    fun View.gone() {
-        visibility = View.GONE
-    }
+	/**
+	 * Function to remove [View]
+	 * @receiver [View]
+	 */
+	fun View.gone() {
+		visibility = View.GONE
+	}
 
-    /**
-     * Function to enable [View]
-     * @receiver [View]
-     */
-    fun View.enable() {
-        isEnabled = true
-    }
+	/**
+	 * Function to enable [View]
+	 * @receiver [View]
+	 */
+	fun View.enable() {
+		isEnabled = true
+	}
 
-    /**
-     * Function to disable [View]
-     */
-    fun View.disable() {
-        isEnabled = false
-    }
+	/**
+	 * Function to disable [View]
+	 */
+	fun View.disable() {
+		isEnabled = false
+	}
 
-    /**
-     * Function to define listener when text changed on [EditText]
-     * @param doWhenChange action to do when the text changed
-     * @receiver [EditText]
-     */
-    fun EditText.onTextChanged(doWhenChange: (text: String) -> Unit) {
-        this.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(currentText: Editable?) {
-                doWhenChange(currentText.toString())
-            }
+	/**
+	 * Function to define listener when text changed on [EditText]
+	 * @param doWhenChange action to do when the text changed
+	 * @receiver [EditText]
+	 */
+	fun EditText.onTextChanged(doWhenChange: (text: String) -> Unit) {
+		this.addTextChangedListener(object : TextWatcher {
+			override fun afterTextChanged(currentText: Editable?) {
+				doWhenChange(currentText.toString())
+			}
 
-            override fun beforeTextChanged(currentText: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                // Intended to be empty
-            }
+			override fun beforeTextChanged(currentText: CharSequence?, p1: Int, p2: Int, p3: Int) {
+				// Intended to be empty
+			}
 
-            override fun onTextChanged(currentText: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                // Intended to be empty
-            }
-        })
-    }
+			override fun onTextChanged(currentText: CharSequence?, p1: Int, p2: Int, p3: Int) {
+				// Intended to be empty
+			}
+		})
+	}
 }

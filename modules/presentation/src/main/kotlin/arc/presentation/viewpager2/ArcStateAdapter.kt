@@ -16,12 +16,12 @@ import arc.presentation.fragment.ArcFragment
  * Copyright © 2022-2023 jimlyas. All rights reserved.
  */
 class ArcStateAdapter(
-    manager: FragmentManager,
-    lifeCycle: Lifecycle,
-    private val listFragment: List<ArcFragment<*>>
+	manager: FragmentManager,
+	lifeCycle: Lifecycle,
+	private val listFragment: List<ArcFragment<*>>
 ) : FragmentStateAdapter(manager, lifeCycle) {
 
-    override fun getItemCount() = listFragment.size
+	override fun getItemCount() = listFragment.size
 
-    override fun createFragment(position: Int) = listFragment[position]
+	override fun createFragment(position: Int) = listFragment[position]
 }

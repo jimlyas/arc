@@ -41,78 +41,78 @@ import kotlin.math.min
  * Copyright © 2022-2023 jimlyas. All rights reserved.
  */
 class CameraXSetup(
-    private val view: PreviewView,
-    private val lifeCycle: LifecycleOwner,
-    @CameraSelector.LensFacing private val lensFacing: Int
+	private val view: PreviewView,
+	private val lifeCycle: LifecycleOwner,
+	@CameraSelector.LensFacing private val lensFacing: Int
 ) {
 
-    companion object {
-        const val RATIO_4_3 = 4.0 / 3.0
-        const val RATIO_16_9 = 16.0 / 9.0
-    }
+	companion object {
+		const val RATIO_4_3 = 4.0 / 3.0
+		const val RATIO_16_9 = 16.0 / 9.0
+	}
 
-    private val cameraProvider = ProcessCameraProvider.getInstance(view.context)
-        .apply { addListener({}, ContextCompat.getMainExecutor(view.context)) }.get()
-    private val cameraSelector = CameraSelector.Builder().requireLensFacing(lensFacing).build()
+	private val cameraProvider = ProcessCameraProvider.getInstance(view.context)
+		.apply { addListener({}, ContextCompat.getMainExecutor(view.context)) }.get()
+	private val cameraSelector = CameraSelector.Builder().requireLensFacing(lensFacing).build()
 
-    init {
-        val camera = cameraProvider.bindToLifecycle(lifeCycle, cameraSelector,
-            Preview.Builder()
-                .setResolutionSelector(
-                    ResolutionSelector.Builder()
-                        .setAspectRatioStrategy(RATIO_16_9_FALLBACK_AUTO_STRATEGY).build()
-                )
-                .setTargetRotation(view.display.rotation)
-                .build()
-                .also { it.setSurfaceProvider(view.surfaceProvider) }
-        )
+	init {
+		val camera = cameraProvider.bindToLifecycle(lifeCycle, cameraSelector,
+			Preview.Builder()
+				.setResolutionSelector(
+					ResolutionSelector.Builder()
+						.setAspectRatioStrategy(RATIO_16_9_FALLBACK_AUTO_STRATEGY).build()
+				)
+				.setTargetRotation(view.display.rotation)
+				.build()
+				.also { it.setSurfaceProvider(view.surfaceProvider) }
+		)
 
-        view.setOnTouchListener { _, motionEvent ->
-            view.performClick()
-            return@setOnTouchListener when (motionEvent.action) {
-                ACTION_DOWN -> true
-                ACTION_UP -> {
-                    val factory = SurfaceOrientedMeteringPointFactory(
-                        view.width.toFloat(),
-                        view.height.toFloat()
-                    )
-                    val autoFocusPoint = factory.createPoint(motionEvent.x, motionEvent.y)
-                    camera.cameraControl.startFocusAndMetering(
-                        Builder(autoFocusPoint, FLAG_AF).apply { disableAutoCancel() }.build()
-                    )
-                    true
-                }
+		view.setOnTouchListener { _, motionEvent ->
+			view.performClick()
+			return@setOnTouchListener when (motionEvent.action) {
+				ACTION_DOWN -> true
+				ACTION_UP -> {
+					val factory = SurfaceOrientedMeteringPointFactory(
+						view.width.toFloat(),
+						view.height.toFloat()
+					)
+					val autoFocusPoint = factory.createPoint(motionEvent.x, motionEvent.y)
+					camera.cameraControl.startFocusAndMetering(
+						Builder(autoFocusPoint, FLAG_AF).apply { disableAutoCancel() }.build()
+					)
+					true
+				}
 
-                else -> false
-            }
-        }
-    }
+				else -> false
+			}
+		}
+	}
 
-    /**
-     * Function to add another [UseCase] to the list of [Camera]
-     * @param useCase a new [UseCase] to add to the [Camera]
-     */
-    fun addUseCase(useCase: UseCase) {
-        cameraProvider.bindToLifecycle(lifeCycle, cameraSelector, useCase)
-    }
+	/**
+	 * Function to add another [UseCase] to the list of [Camera]
+	 * @param useCase a new [UseCase] to add to the [Camera]
+	 */
+	fun addUseCase(useCase: UseCase) {
+		cameraProvider.bindToLifecycle(lifeCycle, cameraSelector, useCase)
+	}
 
-    /**
-     * Function to remove [UseCase] to the list of [Camera]
-     * @param useCase a new [UseCase] to add to the [Camera]
-     */
-    fun removeUseCase(useCase: UseCase) {
-        cameraProvider.unbind(useCase)
-    }
+	/**
+	 * Function to remove [UseCase] to the list of [Camera]
+	 * @param useCase a new [UseCase] to add to the [Camera]
+	 */
+	fun removeUseCase(useCase: UseCase) {
+		cameraProvider.unbind(useCase)
+	}
 
-    /**
-     * Function to calculate aspect ratio for preview camera
-     * @param width width of the current device screen
-     * @param height height of the current device screen
-     * @return [AspectRatio] for previewing in current device
-     */
-    private fun aspectRatio(width: Int, height: Int): Int {
-        val previewRatio = max(width, height).toDouble() / min(width, height)
-        return if (abs(previewRatio - RATIO_4_3) <= abs(previewRatio - RATIO_16_9))
-            AspectRatio.RATIO_4_3 else AspectRatio.RATIO_16_9
-    }
+	/**
+	 * Function to calculate aspect ratio for preview camera
+	 * @param width width of the current device screen
+	 * @param height height of the current device screen
+	 * @return [AspectRatio] for previewing in current device
+	 */
+	private fun aspectRatio(width: Int, height: Int): Int {
+		val previewRatio = max(width, height).toDouble() / min(width, height)
+		return if (abs(previewRatio - RATIO_4_3) <= abs(previewRatio - RATIO_16_9))
+			AspectRatio.RATIO_4_3 else AspectRatio.RATIO_16_9
+	}
 }

@@ -11,24 +11,24 @@ import android.graphics.drawable.Drawable
  * Copyright © 2022-2023 jimlyas. All rights reserved.
  */
 class TabLayoutConfiguration(
-    var listTitle: List<String>? = null, var listIcon: List<Drawable?>? = null
+	var listTitle: List<String>? = null, var listIcon: List<Drawable?>? = null
 ) {
 
-    /**
-     * Function to define titles for the tab
-     * @param listTitle list of [String] for the tab title
-     */
-    fun withTitles(listTitle: List<String>) {
-        this.listTitle = listTitle
-    }
+	/**
+	 * Function to define titles for the tab
+	 * @param listTitle list of [String] for the tab title
+	 */
+	fun withTitles(listTitle: List<String>) {
+		this.listTitle = listTitle
+	}
 
-    /**
-     * Function to define list of icon for the tab
-     * @param listIcon list of [Drawable] for the tab icon
-     */
-    fun withIcons(listIcon: List<Drawable?>) {
-        this.listIcon = listIcon
-    }
+	/**
+	 * Function to define list of icon for the tab
+	 * @param listIcon list of [Drawable] for the tab icon
+	 */
+	fun withIcons(listIcon: List<Drawable?>) {
+		this.listIcon = listIcon
+	}
 }
 
 typealias TabLayoutDeclaration = TabLayoutConfiguration.() -> Unit

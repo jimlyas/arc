@@ -18,17 +18,17 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
  * Copyright © 2022-2023 jimlyas. All rights reserved.
  */
 abstract class ArcBottomSheet<viewBinding : ViewBinding>(isDialogCancelable: Boolean) :
-    BottomSheetDialogFragment() {
+	BottomSheetDialogFragment() {
 
-    init {
-        isCancelable = isDialogCancelable
-    }
+	init {
+		isCancelable = isDialogCancelable
+	}
 
-    protected val binding by lazy { inflateViewBinding() }
+	protected val binding by lazy { inflateViewBinding() }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ) = binding.root
+	override fun onCreateView(
+		inflater: LayoutInflater,
+		container: ViewGroup?,
+		savedInstanceState: Bundle?
+	) = binding.root
 }

@@ -22,16 +22,16 @@ import arc.utilities.context.GlobalContext
  */
 abstract class ArcBroadcastReceiver : BroadcastReceiver(), LifecycleEventObserver {
 
-    protected val ctx = GlobalContext.get()
+	protected val ctx = GlobalContext.get()
 
-    abstract fun broadcastIntent(): IntentFilter
+	abstract fun broadcastIntent(): IntentFilter
 
-    abstract fun exported(): Boolean
+	abstract fun exported(): Boolean
 
-    override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
-        if (event == ON_START) registerReceiver(
-            ctx, this, broadcastIntent(),
-            if (exported()) RECEIVER_EXPORTED else RECEIVER_NOT_EXPORTED
-        ) else if (event == ON_DESTROY) ctx.unregisterReceiver(this)
-    }
+	override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
+		if (event == ON_START) registerReceiver(
+			ctx, this, broadcastIntent(),
+			if (exported()) RECEIVER_EXPORTED else RECEIVER_NOT_EXPORTED
+		) else if (event == ON_DESTROY) ctx.unregisterReceiver(this)
+	}
 }
