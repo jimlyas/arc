@@ -7,18 +7,18 @@ rules how application data must be created, stored, and changed.
 
 Database Room implementation using encrypted SQLCipher
 
-## Package arc.data.source.local.db.dao
+# Package arc.data.source.local.db.dao
 
 Database Access Object for manipulating Room database tables
 
-## Package arc.data.source.local.extension
+# Package arc.data.source.local.db.extension
 
 Extension function for creating instance of Room Database
 
-## Package arc.data.source.local.model
+# Package arc.data.source.local.db.model
 
 Base model for all Entitiy in Room Database Table
 
-## Package arc.data.source.local.preference
+# Package arc.data.source.local.preference
 
 SharedPreference Implementation

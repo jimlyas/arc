@@ -4,8 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
-import net.sqlcipher.database.SQLiteDatabase
-import net.sqlcipher.database.SQLiteDatabaseHook
+import net.sqlcipher.database.SQLiteDatabase.getBytes
 import net.sqlcipher.database.SupportFactory
 
 /**
@@ -24,7 +23,6 @@ object RoomDatabaseExtension {
 	 * @param databaseName [String] of name for the [RoomDatabase]
 	 * @param passPhrase [String] of pass phrase to encrypt the database
 	 * @param fallbackMigration [Boolean] define does the database should fall back when there's new version?
-	 * @param useMemoryProtection [Boolean] define does the database will use memory protection, you can disable it to improve performance
 	 * @param migrationList [List] of [Migration] of [RoomDatabase] for each new versions
 	 * @return instance of [db]
 	 */
@@ -32,23 +30,9 @@ object RoomDatabaseExtension {
 		databaseName: String,
 		passPhrase: String,
 		fallbackMigration: Boolean = false,
-		useMemoryProtection: Boolean = false,
 		migrationList: List<Migration>? = null
 	): db = Room.databaseBuilder(this, db::class.java, databaseName).apply {
-		openHelperFactory(
-			SupportFactory(
-				SQLiteDatabase.getBytes(passPhrase.toCharArray()),
-				object : SQLiteDatabaseHook {
-					override fun preKey(database: SQLiteDatabase?) = Unit
-
-					override fun postKey(database: SQLiteDatabase?) {
-						database?.rawExecSQL(
-							if (useMemoryProtection) "PRAGMA cipher_memory_security = ON"
-							else "PRAGMA cipher_memory_security = OFF"
-						)
-					}
-				})
-		)
+		openHelperFactory(SupportFactory(getBytes(passPhrase.toCharArray())))
 		if (fallbackMigration) fallbackToDestructiveMigration()
 		migrationList?.forEach { migration -> addMigrations(migration) }
 	}.build()

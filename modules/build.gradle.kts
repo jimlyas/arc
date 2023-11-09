@@ -4,6 +4,7 @@ import org.gradle.api.JavaVersion.VERSION_17
 import org.jetbrains.dokka.gradle.DokkaMultiModuleTask
 import org.jetbrains.dokka.gradle.DokkaTaskPartial
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import java.net.URL
 
 plugins {
 	id("java-platform")
@@ -59,8 +60,6 @@ subprojects {
 	apply(plugin = "kotlin-android")
 	apply(plugin = "com.vanniktech.maven.publish")
 	apply(plugin = "org.jetbrains.dokka")
-
-	val baseRepositoryURL = "https://github.com/jimlyas/arc/blob/main/modules/${project.name}"
 
 	group = "io.github.jimlyas"
 	version = "0.1.2"
@@ -133,12 +132,14 @@ subprojects {
 		kotlinOptions { freeCompilerArgs += "-Xcontext-receivers" }
 	}
 
+	val repositoryURL = "https://github.com/jimlyas/arc/tree/main/modules/${project.name}/"
+
 	tasks.withType<DokkaTaskPartial>().configureEach {
 		moduleName.set(project.name[0].uppercaseChar() + project.name.substring(1))
 		moduleVersion.set(project.version.toString())
 
 		dokkaSourceSets {
-			getByName("main") {
+			named("main") {
 				reportUndocumented.set(false)
 				skipDeprecated.set(false)
 				skipEmptyPackages.set(true)
@@ -152,7 +153,7 @@ subprojects {
 				includes.setFrom(files("$projectDir/packages.md"))
 				sourceLink {
 					localDirectory.set(file("src/main/kotlin"))
-					remoteUrl.set(uri("${baseRepositoryURL}/src/main/kotlin").toURL())
+					remoteUrl.set(URL("${repositoryURL}src/main/kotlin"))
 					remoteLineSuffix.set("#L")
 				}
 				pluginsMapConfiguration.set(
