@@ -18,7 +18,7 @@ import kotlin.annotation.AnnotationRetention.SOURCE
  * @property ROOTED indicate that the device is rooted
  * @property SAFE indicate that the device is safe
  *
- * Copyright © 2022-2023 jimlyas. All rights reserved.
+ * Copyright © 2022-2024 jimlyas. All rights reserved.
  */
 object DeviceChecker {
 	const val EMULATOR = 0

@@ -17,7 +17,7 @@ import arc.data.source.local.db.model.DbEntity
  * @since 0.1.0
  * @param entity [Object] that inherit [DbEntity] that will be manipulated using this DAO
  *
- * Copyright © 2022-2023 jimlyas. All rights reserved.
+ * Copyright © 2022-2024 jimlyas. All rights reserved.
  */
 interface ArcDao<entity : DbEntity> : DbService {
 

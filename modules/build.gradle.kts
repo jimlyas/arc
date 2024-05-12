@@ -22,7 +22,7 @@ tasks.withType<DokkaMultiModuleTask>().configureEach {
 	pluginsMapConfiguration.set(
 		mapOf(
 			"org.jetbrains.dokka.base.DokkaBase" to """{
-                    "footerMessage": "Copyright © 2022-2023 jimlyas. All rights reserved.",
+                    "footerMessage": "Copyright © 2022-2024 jimlyas. All rights reserved.",
                      "customAssets" : ["${file("logo-icon.svg")}"]
                  }"""
 		)
@@ -159,7 +159,7 @@ subprojects {
 				pluginsMapConfiguration.set(
 					mapOf(
 						"org.jetbrains.dokka.base.DokkaBase" to """{ 
-                    "footerMessage": "Copyright © 2022-2023 jimlyas. All rights reserved.",
+                    "footerMessage": "Copyright © 2022-2024 jimlyas. All rights reserved.",
                      "customAssets" : ["${file("${rootProject.path}/logo-icon.svg")}"]
                  }"""
 					)

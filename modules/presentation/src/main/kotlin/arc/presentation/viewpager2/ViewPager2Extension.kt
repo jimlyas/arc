@@ -9,7 +9,7 @@ import com.google.android.material.tabs.TabLayoutMediator
  * Function to configure [ViewPager2]
  * @param configuration configuration for the [ViewPager2]
  * @receiver [ViewPager2]
- * Copyright © 2022-2023 jimlyas. All rights reserved.
+ * Copyright © 2022-2024 jimlyas. All rights reserved.
  */
 fun ViewPager2.configure(configuration: ViewPagerDeclaration) {
 	val config = ViewPager2Configuration().apply(configuration)

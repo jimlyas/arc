@@ -38,7 +38,7 @@ import java.io.Serializable
  * @property permissionRequestContract [ActivityResultContracts] for requesting permission from the user
  * @property selectedImageListener listener to invoke when user pick an image
  * @property pickImageContract [ActivityResultContracts] for picking image from user
- * Copyright © 2022-2023 jimlyas. All rights reserved.
+ * Copyright © 2022-2024 jimlyas. All rights reserved.
  */
 abstract class ArcActivity<viewBinding : ViewBinding>(@IdRes hostId: Int? = null) :
 	AppCompatActivity(), NavigationDelegate by NavigationDelegation() {

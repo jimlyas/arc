@@ -5,7 +5,7 @@ package arc.utilities.extension
  * @author jimlyas
  * @since 0.1.0
  *
- * Copyright © 2022-2023 jimlyas. All rights reserved.
+ * Copyright © 2022-2024 jimlyas. All rights reserved.
  */
 object NullabilityExtension {
 

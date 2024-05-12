@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable
  * @param listTitle [List] of [String] used as [com.google.android.material.tabs.TabLayout]'s title
  * @param listIcon [List] of [Drawable] used as [com.google.android.material.tabs.TabLayout]'s icon
  *
- * Copyright © 2022-2023 jimlyas. All rights reserved.
+ * Copyright © 2022-2024 jimlyas. All rights reserved.
  */
 class TabLayoutConfiguration(
 	var listTitle: List<String>? = null, var listIcon: List<Drawable?>? = null

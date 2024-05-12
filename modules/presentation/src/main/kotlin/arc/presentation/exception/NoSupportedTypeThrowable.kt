@@ -5,6 +5,6 @@ package arc.presentation.exception
  * @author jimlyas
  * @since 0.1.0
  *
- * Copyright © 2022-2023 jimlyas. All rights reserved.
+ * Copyright © 2022-2024 jimlyas. All rights reserved.
  */
 class NoSupportedTypeThrowable(override val message: String?) : Throwable()

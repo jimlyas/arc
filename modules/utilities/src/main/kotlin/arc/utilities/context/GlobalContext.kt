@@ -11,7 +11,7 @@ import arc.utilities.context.GlobalContext.context
  * @since 0.1.0
  * @property context [Context] of current application
  *
- * Copyright © 2022-2023 jimlyas. All rights reserved.
+ * Copyright © 2022-2024 jimlyas. All rights reserved.
  */
 @SuppressLint("StaticFieldLeak")
 object GlobalContext {

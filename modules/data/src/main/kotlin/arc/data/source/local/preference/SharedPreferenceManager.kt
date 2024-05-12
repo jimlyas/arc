@@ -23,7 +23,7 @@ import kotlin.Float.Companion.MIN_VALUE
  * @property editor instance of [android.content.SharedPreferences.Editor] that will be used to edit
  * value, use lazy initialization so will not created unless called
  *
- * Copyright © 2022-2023 jimlyas. All rights reserved.
+ * Copyright © 2022-2024 jimlyas. All rights reserved.
  */
 class SharedPreferenceManager(
 	context: Context,

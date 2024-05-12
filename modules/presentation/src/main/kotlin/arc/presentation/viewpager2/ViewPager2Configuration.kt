@@ -13,7 +13,7 @@ import com.google.android.material.tabs.TabLayout
  * @param tabLayout [TabLayout] to linked with the [androidx.viewpager2.widget.ViewPager2]
  * @param tabLayoutConfiguration configuration for the [TabLayout]
  *
- * Copyright © 2022-2023 jimlyas. All rights reserved.
+ * Copyright © 2022-2024 jimlyas. All rights reserved.
  */
 class ViewPager2Configuration(
 	var activity: ArcActivity<*>? = null,

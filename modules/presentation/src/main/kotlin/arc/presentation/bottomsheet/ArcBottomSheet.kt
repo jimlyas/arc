@@ -15,7 +15,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
  * @param isDialogCancelable Does the [ArcBottomSheet] cancelable of not?
  * @property binding instance of [viewBinding] that can be use to manipulate the [android.view.View] components
  *
- * Copyright © 2022-2023 jimlyas. All rights reserved.
+ * Copyright © 2022-2024 jimlyas. All rights reserved.
  */
 abstract class ArcBottomSheet<viewBinding : ViewBinding>(isDialogCancelable: Boolean) :
 	BottomSheetDialogFragment() {

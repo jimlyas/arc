@@ -10,7 +10,7 @@ import androidx.navigation.NavOptions
  * [NavigationDelegate] define functions surrounding the Jetpack [androidx.navigation.Navigation] implementation
  * @author jimlyas
  * @since 0.1.0
- * Copyright © 2022-2023 jimlyas. All rights reserved.
+ * Copyright © 2022-2024 jimlyas. All rights reserved.
  */
 interface NavigationDelegate {
 

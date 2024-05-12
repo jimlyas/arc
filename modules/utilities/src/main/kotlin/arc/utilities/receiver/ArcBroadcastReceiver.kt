@@ -18,7 +18,7 @@ import arc.utilities.context.GlobalContext
  * @since 0.1.0
  * @property ctx [android.content.Context] to register and unregister current [ArcBroadcastReceiver]
  *
- * Copyright © 2022-2023 jimlyas. All rights reserved.
+ * Copyright © 2022-2024 jimlyas. All rights reserved.
  */
 abstract class ArcBroadcastReceiver : BroadcastReceiver(), LifecycleEventObserver {
 

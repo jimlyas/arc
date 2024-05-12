@@ -8,7 +8,7 @@ import kotlin.annotation.AnnotationRetention.SOURCE
  * @author jimlyas
  * @since 0.1.0
  *
- * Copyright © 2022-2023 jimlyas. All rights reserved.
+ * Copyright © 2022-2024 jimlyas. All rights reserved.
  */
 @StringDef(GOOGLE_PLAY_STORE, AMAZON_APP_STORE, HUAWEI_APP_GALLERY)
 @Retention(SOURCE)

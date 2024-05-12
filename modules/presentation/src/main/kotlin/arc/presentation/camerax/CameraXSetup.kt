@@ -38,7 +38,7 @@ import kotlin.math.min
  * @property cameraProvider standard [ProcessCameraProvider] that binds all the [UseCase] to the [Camera]
  * @property cameraSelector defined which lens to use for the camera in the given [UseCase]
  *
- * Copyright © 2022-2023 jimlyas. All rights reserved.
+ * Copyright © 2022-2024 jimlyas. All rights reserved.
  */
 class CameraXSetup(
 	private val view: PreviewView,

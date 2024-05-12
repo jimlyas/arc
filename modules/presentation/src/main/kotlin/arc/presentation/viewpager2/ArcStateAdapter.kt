@@ -13,7 +13,7 @@ import arc.presentation.fragment.ArcFragment
  * @param lifeCycle bind the [androidx.viewpager2.widget.ViewPager2] to the [Lifecycle]
  * @param listFragment [List] of [ArcFragment] to inflate into the [androidx.viewpager2.widget.ViewPager2]
  *
- * Copyright © 2022-2023 jimlyas. All rights reserved.
+ * Copyright © 2022-2024 jimlyas. All rights reserved.
  */
 class ArcStateAdapter(
 	manager: FragmentManager,

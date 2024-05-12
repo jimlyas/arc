@@ -11,7 +11,7 @@ import arc.presentation.fragment.ArcFragment
  * @author jimlyas
  * @since 0.1.0
  *
- * Copyright © 2022-2023 jimlyas. All rights reserved.
+ * Copyright © 2022-2024 jimlyas. All rights reserved.
  */
 
 /**

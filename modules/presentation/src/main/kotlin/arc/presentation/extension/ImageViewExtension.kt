@@ -28,7 +28,7 @@ import com.bumptech.glide.request.target.Target
  * @property loadListener [RequestListener] to listen the state of image loading, used for
  * displaying and hiding [ProgressBar] and running [onImageLoaded] or [onImageNotLoaded]
  *
- * Copyright © 2022-2023 jimlyas. All rights reserved.
+ * Copyright © 2022-2024 jimlyas. All rights reserved.
  */
 class ImageViewLoadConfiguration(
 	var source: Any? = null,
