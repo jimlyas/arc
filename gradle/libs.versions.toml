@@ -3,19 +3,20 @@ android = "8.1.0"
 android-espresso = "3.5.1"
 android-junit = "1.1.5"
 android-security = "1.1.0-alpha06"
-appcompat = "1.7.0-alpha03"
-camerax = "1.3.0"
-core-ktx = "1.12.0"
+appcompat = "1.7.0-beta01"
+camerax = "1.3.3"
+core-ktx = "1.13.1"
+dokka = "1.9.20"
 junit = "4.13.2"
-kotlin = "1.8.10"
-material = "1.10.0"
-navigation = "2.7.5"
+kotlin = "1.9.23"
+material = "1.12.0"
+navigation = "2.7.7"
 okhttp3 = "5.0.0-alpha.9"
 paging = "3.2.1"
 publish = "0.25.3"
 retrofit = "2.9.0"
-room = "2.6.0"
-room-paging = "2.6.0"
+room = "2.6.1"
+room-paging = "2.6.1"
 runtime = "1.1.1"
 
 [libraries]
@@ -50,7 +51,7 @@ room = ["room-ktx", "room-paging", "room-runtime"]
 
 [plugins]
 app = { id = "com.android.application", version.ref = "android" }
-dokka = { id = "org.jetbrains.dokka", version.ref = "kotlin" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 lib = { id = "com.android.library", version.ref = "android" }
 publish = { id = "com.vanniktech.maven.publish", version.ref = "publish" }

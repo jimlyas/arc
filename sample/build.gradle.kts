@@ -52,12 +52,9 @@ android {
 
 dependencies {
     // ARC modules
-//    implementation(projects.modules.data)
-//    implementation(projects.modules.presentation)
-//    implementation(projects.modules.utilities)
-    implementation("io.github.jimlyas:ARC-presentation:0.1.2")
-    implementation("io.github.jimlyas:ARC-data:0.1.2")
-    implementation("io.github.jimlyas:ARC-utilities:0.1.2")
+    implementation(projects.modules.data)
+	implementation(projects.modules.presentation)
+	implementation(projects.modules.utilities)
 
     implementation(libs.ktx)
     implementation(libs.compat)
